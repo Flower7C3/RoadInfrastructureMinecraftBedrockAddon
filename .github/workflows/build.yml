@@ -151,7 +151,6 @@ jobs:
             exit 1
           fi
           echo "✅ Build artifacts present"
-
       - name: Test package integrity
         run: |
           echo "🧪 Testing package integrity..."
@@ -184,6 +183,9 @@ jobs:
         with:
           tag_name: v${{ needs.build.outputs.version }}
           name: Release v${{ needs.build.outputs.version }}
+          files: |
+            dist/*.mcaddon
+            dist/*.mcpack
           body: |
             ## Road Infrastructure v${{ needs.build.outputs.version }}
 
