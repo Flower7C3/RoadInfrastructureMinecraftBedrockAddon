@@ -10,7 +10,7 @@ from console_utils import ConsoleStyle, print_build_info, print_header, print_in
 
 
 # Pack name constant
-PACK_NAME = "City Roads"
+PACK_NAME = "Road Infrastructure"
 
 
 def get_minecraft_dir():

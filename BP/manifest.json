@@ -1,8 +1,8 @@
 {
   "format_version": 2,
   "header": {
-    "name": "City Roads",
-    "description": "City Roads Behavior Pack",
+    "name": "Road Infrastructure",
+    "description": "Road Infrastructure Behavior Pack",
     "uuid": "9261e86d-1356-40b1-88db-f6d3dd575e29",
     "version": [
       1,

@@ -1,6 +1,6 @@
 {
 	"type": "minecraftBedrock",
-	"name": "City Roads",
+	"name": "Road Infrastructure",
 	"namespace": "road_infrastructure",
 	"authors": [
 		"MrBoT10",
@@ -39,7 +39,7 @@
 			[
 				"simpleRewrite",
 				{
-					"packName": "City Roads"
+					"packName": "Road Infrastructure"
 				}
 			]
 		]

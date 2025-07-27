@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Skrypt do weryfikacji tekstur w projekcie Minecraft City Roads
+Skrypt do weryfikacji tekstur w projekcie Minecraft Road Infrastructure
 Sprawdza czy wszystkie bloki mają odpowiednie tekstury i czy wszystkie tekstury są używane
 """
 
@@ -179,7 +179,7 @@ def check_unused_textures(texture_dir, terrain_texture_file):
 
 def main():
     """Główna funkcja weryfikacji"""
-    print("🔍 WERYFIKACJA PROJEKTU CITY ROADS")
+    print("🔍 WERYFIKACJA PROJEKTU ROAD INFRASTRUCTURE")
     print("=" * 60)
     
     # Ścieżki
