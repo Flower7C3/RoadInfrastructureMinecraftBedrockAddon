@@ -156,11 +156,12 @@ jobs:
           echo "🧪 Testing package integrity..."
           for file in dist/*.mcaddon dist/*.mcpack; do
             if [ -f "$file" ]; then
-              echo "✅ Testing: $(basename "$file")"
+              echo "🔍 Testing: $(basename "$file")"
               unzip -t "$file" > /dev/null
-              echo "✅ Package integrity verified"
+              echo "✅ Package integrity verified: $(basename "$file")"
             fi
           done
+          echo "🎯 All packages integrity verified successfully!"
 
   release:
     needs: [ build, test ]
