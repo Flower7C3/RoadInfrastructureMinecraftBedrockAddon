@@ -1,0 +1,68 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "kerbstone": {
+      "textures": "textures/blocks/kerbstone.png"
+    },
+    "paving_slabs_squares": {
+      "textures": "textures/blocks/paving_slabs_squares.png"
+    },
+    "paving_slabs_flower": {
+      "textures": "textures/blocks/paving_slabs_flower.png"
+    },
+    "3d_turn": {
+      "textures": "textures/blocks/road_marking_turn_3d.png"
+    },
+    "road_marking_stop": {
+      "textures": "textures/blocks/road_marking_stop.png"
+    },
+    "road_marking_stop_st": {
+      "textures": "textures/blocks/road_marking_stop_st.png"
+    },
+    "road_marking_stop_op": {
+      "textures": "textures/blocks/road_marking_stop_op.png"
+    },
+    "road_marking_subordinate": {
+      "textures": "textures/blocks/road_marking_subordinate.png"
+    },
+    "arrow_road_marking": {
+      "textures": "textures/blocks/road_marking_arrow_straight.png"
+    },
+    "road_marking_arrow_left": {
+      "textures": "textures/blocks/road_marking_arrow_left.png"
+    },
+    "road_marking_arrow_right": {
+      "textures": "textures/blocks/road_marking_arrow_right.png"
+    },
+    "base_road": {
+      "textures": "textures/blocks/base_road.png"
+    },
+    "road_marking": {
+      "textures": "textures/blocks/road_marking_straight.png"
+    },
+    "road_marking_oblique": {
+      "textures": "textures/blocks/road_marking_oblique.png"
+    },
+    "road_marking_v_style": {
+      "textures": "textures/blocks/road_marking_v_style.png"
+    },
+    "road_marking_turn": {
+      "textures": "textures/blocks/road_marking_turn_angle.png"
+    },
+    "road_marking_straight_half": {
+      "textures": "textures/blocks/road_marking_straight_half.png"
+    },
+    "short_arrow_marking": {
+      "textures": "textures/blocks/road_marking_arrow_short.png"
+    },
+    "zebra_crossing_down": {
+      "textures": "textures/blocks/zebra_crossing_down.png"
+    },
+    "zebra_crossing_top": {
+      "textures": "textures/blocks/zebra_crossing_top.png"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "City Building Kit",
+    "description": "City Building Kit Behavior Pack",
+    "uuid": "9261e86d-1356-40b1-88db-f6d3dd575e29",
+    "version": [
+      1,
+      0,
+      90
+    ],
+    "min_engine_version": [
+      1,
+      16,
+      0
+    ]
+  },
+  "metadata": {
+    "authors": [
+      "MrBoT10",
+      "Flower7C3"
+    ]
+  },
+  "modules": [
+    {
+      "description": "Behavior",
+      "type": "data",
+      "version": [
+        1,
+        0,
+        90
+      ],
+      "uuid": "6e80e02b-fac6-4676-9d5f-426c269ac3dc"
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "070af60b-4e9d-667f-1ecd-e1b1d7d52845",
+      "version": [
+        1,
+        0,
+        90
+      ]
+    }
+  ]
+}
