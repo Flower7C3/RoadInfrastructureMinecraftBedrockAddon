@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-Enhanced Build Script for Road Infrastructure Addon
-Based on PolishRoadSigns build system
+Build Script for Road Infrastructure Addon
 """
 
 import os

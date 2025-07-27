@@ -19,12 +19,12 @@ jobs:
           echo "🔍 Checking project structure..."
           
           # Required files
-          required_files=(
-            "config.json"
-            "BP/manifest.json"
-            "RP/manifest.json"
-            "build_enhanced.py"
-          )
+                     required_files=(
+             "config.json"
+             "BP/manifest.json"
+             "RP/manifest.json"
+             "build.py"
+           )
           
           for file in "${required_files[@]}"; do
             if [ ! -f "$file" ]; then
@@ -85,16 +85,16 @@ jobs:
         run: |
           echo "🔨 Testing build script..."
           
-          if [ -f "build_enhanced.py" ]; then
-            # Test if script can be imported
-            python3 -c "import build_enhanced" 2>/dev/null && echo "✅ Build script is valid Python"
-            
-            # Test help
-            python3 build_enhanced.py --help > /dev/null && echo "✅ Build script help works"
-          else
-            echo "❌ build_enhanced.py not found"
-            exit 1
-          fi
+                     if [ -f "build.py" ]; then
+             # Test if script can be imported
+             python3 -c "import build" 2>/dev/null && echo "✅ Build script is valid Python"
+             
+             # Test help
+             python3 build.py --help > /dev/null && echo "✅ Build script help works"
+           else
+             echo "❌ build.py not found"
+             exit 1
+           fi
 
       - name: Check for texture issues
         run: |

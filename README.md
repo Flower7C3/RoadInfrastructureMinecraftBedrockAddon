@@ -40,7 +40,7 @@ Ten addon dodaje do Minecraft kompletną infrastrukturę drogową, w tym:
 1. Pobierz plik `.mcaddon` z sekcji [Releases](https://github.com/your-repo/releases)
 2. Uruchom skrypt instalacji:
    ```bash
-   python3 build_enhanced.py --mcaddon --test-on-local
+   python3 build.py --mcaddon --test-on-local
    ```
 3. Uruchom Minecraft i włącz paczki (patrz sekcja "Aktywacja w grze")
 
@@ -105,19 +105,19 @@ Jeśli nie widzisz bloków w grze:
 
 ```bash
 # Buduj tylko .mcaddon
-python3 build_enhanced.py --mcaddon
+python3 build.py --mcaddon
 
 # Buduj tylko .mcpack
-python3 build_enhanced.py --mcpack
+python3 build.py --mcpack
 
 # Buduj wszystkie typy pakietów
-python3 build_enhanced.py --all
+python3 build.py --all
 
 # Buduj bez zwiększania wersji
-python3 build_enhanced.py --mcaddon --no-bump
+python3 build.py --mcaddon --no-bump
 
 # Buduj i zainstaluj lokalnie
-python3 build_enhanced.py --mcaddon --test-on-local
+python3 build.py --mcaddon --test-on-local
 ```
 
 ### GitHub Actions (Automatyczne)
@@ -142,7 +142,7 @@ CityBuildingKit/
 │   ├── textures/               # Tekstury
 │   ├── texts/                  # Tłumaczenia
 │   └── manifest.json           # Manifest RP
-├── build_enhanced.py           # Ulepszony skrypt budowania
+├── build.py                    # Skrypt budowania
 ├── verify_textures.py          # Weryfikacja tekstur
 ├── migrate_world_*.py          # Skrypty migracji świata
 ├── .github/workflows/          # GitHub Actions workflows
