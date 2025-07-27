@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:block": {
     "description": {
-      "identifier": "road_infrastructure:base_road_11",
+      "identifier": "jct:base_road_11",
       "menu_category": {
         "category": "construction"
       }

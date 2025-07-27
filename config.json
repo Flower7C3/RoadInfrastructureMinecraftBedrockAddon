@@ -1,7 +1,7 @@
 {
 	"type": "minecraftBedrock",
 	"name": "Road Infrastructure",
-	"namespace": "road_infrastructure",
+	"namespace": "jct",
 	"authors": [
 		"MrBoT10",
 		"Flower7C3"

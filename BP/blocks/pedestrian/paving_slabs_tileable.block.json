@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:block": {
     "description": {
-      "identifier": "road_infrastructure:paving_slabs_tileable",
+      "identifier": "jct:paving_slabs_tileable",
       "menu_category": {
         "category": "construction"
       }

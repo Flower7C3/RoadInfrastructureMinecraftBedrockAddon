@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:block": {
     "description": {
-      "identifier": "road_infrastructure:short_arrow_marking",
+      "identifier": "jct:short_arrow_marking",
       "menu_category": {
         "category": "construction"
       },
