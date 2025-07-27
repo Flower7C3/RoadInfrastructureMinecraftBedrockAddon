@@ -24,9 +24,6 @@
       "paving_slabs_decorative": {
       "sound": "stone"
     },
-    "paving_slabs_modern": {
-      "sound": "stone"
-    },
     "paving_slabs_gray": {
       "sound": "stone"
     },
@@ -34,12 +31,6 @@
       "sound": "stone"
     },
     "paving_slabs_colorstone": {
-      "sound": "stone"
-    },
-    "paving_slabs_architectural": {
-      "sound": "stone"
-    },
-    "paving_slabs_3dpattern": {
       "sound": "stone"
     },
     "3d_turn": {

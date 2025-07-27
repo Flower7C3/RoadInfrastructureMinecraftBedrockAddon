@@ -25,9 +25,6 @@
     "paving_slabs_decorative": {
       "textures": "textures/blocks/paving_slabs_decorative.png"
     },
-    "paving_slabs_modern": {
-      "textures": "textures/blocks/paving_slabs_modern.png"
-    },
     "paving_slabs_gray": {
       "textures": "textures/blocks/paving_slabs_gray.png"
     },
@@ -36,12 +33,6 @@
     },
     "paving_slabs_colorstone": {
       "textures": "textures/blocks/paving_slabs_colorstone.png"
-    },
-    "paving_slabs_architectural": {
-      "textures": "textures/blocks/paving_slabs_architectural.png"
-    },
-    "paving_slabs_3dpattern": {
-      "textures": "textures/blocks/paving_slabs_3dpattern.png"
     },
     "3d_turn": {
       "textures": "textures/blocks/road_marking_turn_3d.png"
