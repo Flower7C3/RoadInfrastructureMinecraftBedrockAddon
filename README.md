@@ -143,9 +143,9 @@ CityBuildingKit/
 │   ├── texts/                  # Tłumaczenia
 │   └── manifest.json           # Manifest RP
 ├── build_enhanced.py           # Ulepszony skrypt budowania
-├── github_release.py           # Skrypt wydawania na GitHub
 ├── verify_textures.py          # Weryfikacja tekstur
 ├── migrate_world_*.py          # Skrypty migracji świata
+├── .github/workflows/          # GitHub Actions workflows
 └── README.md                   # Dokumentacja
 ```
 
@@ -164,18 +164,18 @@ python3 verify_textures.py
 python3 migrate_world_jct_to_road_infrastructure_with_path.py <ścieżka_do_świata>
 ```
 
-### Wydawanie na GitHub
+### Automatyczne wydawanie
 
-```bash
-# Sprawdź wymagania
-python3 github_release.py --check
+Projekt używa GitHub Actions do automatycznego budowania i wydawania wersji. Każdy push do gałęzi `main` automatycznie:
 
-# Dry run
-python3 github_release.py --dry-run
+1. **Buduje** wszystkie pakiety (.mcaddon i .mcpack)
+2. **Testuje** integralność pakietów
+3. **Tworzy** nowy release na GitHub
+4. **Uploaduje** pliki do release
 
-# Utwórz release
-python3 github_release.py
-```
+Workflow uruchamia się automatycznie przy:
+- Push do `main` → budowanie i release
+- Pull Request → sprawdzanie i komentarze
 
 ## 📊 Statystyki
 
