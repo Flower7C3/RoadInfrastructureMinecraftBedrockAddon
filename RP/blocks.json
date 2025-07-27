@@ -9,13 +9,10 @@
   "paving_slabs_squares": {
     "sound": "stone"
   },
-  "paving_slabs_flower": {
-    "sound": "stone"
-  },
-  "paving_slabs_stone": {
-    "sound": "stone"
-  },
-  "paving_slabs_ceramic": {
+      "paving_slabs_flower": {
+      "sound": "stone"
+    },
+    "paving_slabs_ceramic": {
     "sound": "stone"
   },
   "paving_slabs_pattern": {
