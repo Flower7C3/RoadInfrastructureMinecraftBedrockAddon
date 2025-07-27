@@ -23,7 +23,7 @@
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 30
       },
-      "minecraft:geometry": "geometry.base_road",
+      "minecraft:geometry": "geometry.base_road_16",
       "minecraft:material_instances": {
         "*": {
           "texture": "base_road",

@@ -4,8 +4,8 @@
     {
       "description": {
         "identifier": "geometry.base_road_4",
-        "texture_width: "128",
-        "texture_height: "128",
+        "texture_width": 128,
+        "texture_height": 128,
         "visible_bounds_width": 2,
         "visible_bounds_height": 2.5,
         "visible_bounds_offset": [
@@ -41,8 +41,8 @@
                     12
                   ],
                   "uv_size": [
-                    16,
-                    4
+                    128,
+                    32
                   ]
                 },
                 "east": {
@@ -51,8 +51,8 @@
                     12
                   ],
                   "uv_size": [
-                    16,
-                    4
+                    128,
+                    32
                   ]
                 },
                 "south": {
@@ -61,8 +61,8 @@
                     12
                   ],
                   "uv_size": [
-                    16,
-                    4
+                    128,
+                    32
                   ]
                 },
                 "west": {
@@ -71,8 +71,8 @@
                     12
                   ],
                   "uv_size": [
-                    16,
-                    4
+                    128,
+                    32
                   ]
                 },
                 "up": {

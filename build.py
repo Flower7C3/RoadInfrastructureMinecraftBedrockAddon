@@ -285,7 +285,7 @@ Przykłady użycia:
         clean_existing = not args.no_clean
         if install_mcaddon(mcaddon_path, clean_existing):
             print(ConsoleStyle.success("✅ Pakiet zainstalowany i gotowy do testowania!"))
-            print(ConsoleStyle.info("Uruchom Minecraft i sprawdź nowe znaki drogowe"))
+            print(ConsoleStyle.info("Uruchom Minecraft i sprawdź nowe tekstury drogi"))
         else:
             print(ConsoleStyle.error("❌ Instalacja nie powiodła się"))
 
