@@ -1,7 +1,7 @@
 {
 	"type": "minecraftBedrock",
 	"name": "City Roads",
-	"namespace": "jct",
+	"namespace": "cityroads",
 	"authors": [
 		"MrBoT10",
 		"Flower7C3"

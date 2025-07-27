@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:block": {
     "description": {
-      "identifier": "jct:road_zebra_crossing_middle",
+      "identifier": "cityroads:road_zebra_crossing_middle",
       "menu_category": {
         "category": "construction"
       },
