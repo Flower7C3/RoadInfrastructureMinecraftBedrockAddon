@@ -7,6 +7,7 @@ Uruchom ten skrypt w świecie Minecraft, aby zaktualizować wszystkie bloki
 import os
 import json
 import glob
+import shutil
 from pathlib import Path
 
 # Konfiguracja migracji
@@ -22,6 +23,11 @@ def find_minecraft_worlds():
     mac_path = os.path.join(home, "Library/Application Support/minecraftpe")
     if os.path.exists(mac_path):
         worlds.extend(glob.glob(os.path.join(mac_path, "minecraftWorlds/*")))
+    
+    # mcpelauncher
+    mcpelauncher_path = os.path.join(home, "Library/Application Support/mcpelauncher/games/com.mojang")
+    if os.path.exists(mcpelauncher_path):
+        worlds.extend(glob.glob(os.path.join(mcpelauncher_path, "minecraftWorlds/*")))
     
     # Windows
     win_path = os.path.join(home, "AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang")
@@ -60,7 +66,7 @@ def migrate_world_level_dat(world_path):
             print(f"  ✅ level.dat zaktualizowany")
             return True
         else:
-            print(f"  ⚠️  Nie znaleziono namespace cityroads w level.dat")
+            print(f"  ⚠️  Nie znaleziono namespace {OLD_NAMESPACE} w level.dat")
             return False
             
     except Exception as e:
@@ -177,4 +183,4 @@ def main():
         print("❌ Migracja nie powiodła się")
 
 if __name__ == "__main__":
-    main()
+    main() 
