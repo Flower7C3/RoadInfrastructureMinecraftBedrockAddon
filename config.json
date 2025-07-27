@@ -1,6 +1,6 @@
 {
 	"type": "minecraftBedrock",
-	"name": "CityBuildingKit",
+	"name": "City Roads",
 	"namespace": "jct",
 	"authors": [
 		"MrBoT10",
@@ -39,7 +39,7 @@
 			[
 				"simpleRewrite",
 				{
-					"packName": "CityBuildingKit"
+					"packName": "City Roads"
 				}
 			]
 		]
