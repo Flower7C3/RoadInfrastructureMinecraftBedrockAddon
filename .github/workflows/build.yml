@@ -164,7 +164,7 @@ jobs:
           done
 
   release:
-    needs: [build, test]
+    needs: [ build, test ]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
