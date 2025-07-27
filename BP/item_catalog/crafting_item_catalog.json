@@ -128,7 +128,7 @@
           {
             "group_identifier": {
               "icon": "jct:road_marking_v_style_8",
-              "name": "jct:oblique_marking_roads"
+              "name": "jct:b_style_marking_roads"
             },
             "items": [
               "jct:road_marking_v_style_1",

@@ -3,6 +3,7 @@ jct:pedestrian_slabs=Płyty chodnikowe
 jct:concrete_roads=Drogi betonowe
 jct:straight_marking_roads=Linie drogowe proste
 jct:oblique_marking_roads=Linie drogowe ukośnie
+jct:b_style_marking_roads=Linie drogowe w stylu V
 jct:road_marking_signs=Znaki drogowe
 tile.jct:base_road_1.name=Droga betonowa #1
 tile.jct:base_road_2.name=Droga betonowa #2
