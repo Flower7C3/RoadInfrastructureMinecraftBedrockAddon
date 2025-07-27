@@ -14,98 +14,10 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Check project structure
+      - name: Run comprehensive verification
         run: |
-          echo "🔍 Checking project structure..."
-          
-          # Required files
-                     required_files=(
-             "config.json"
-             "BP/manifest.json"
-             "RP/manifest.json"
-             "build.py"
-           )
-          
-          for file in "${required_files[@]}"; do
-            if [ ! -f "$file" ]; then
-              echo "❌ Missing required file: $file"
-              exit 1
-            else
-              echo "✅ Found: $file"
-            fi
-          done
-          
-          echo "✅ Project structure is valid"
-
-      - name: Verify manifests
-        run: |
-          echo "📋 Verifying manifests..."
-          
-          # Check BP manifest
-          if python3 -c "import json; json.load(open('BP/manifest.json'))" 2>/dev/null; then
-            echo "✅ BP manifest is valid JSON"
-          else
-            echo "❌ BP manifest is invalid JSON"
-            exit 1
-          fi
-          
-          # Check RP manifest
-          if python3 -c "import json; json.load(open('RP/manifest.json'))" 2>/dev/null; then
-            echo "✅ RP manifest is valid JSON"
-          else
-            echo "❌ RP manifest is invalid JSON"
-            exit 1
-          fi
-          
-          # Check config.json
-          if python3 -c "import json; json.load(open('config.json'))" 2>/dev/null; then
-            echo "✅ config.json is valid JSON"
-          else
-            echo "❌ config.json is invalid JSON"
-            exit 1
-          fi
-
-      - name: Count blocks and files
-        run: |
-          echo "📊 Counting project elements..."
-          
-          BLOCK_COUNT=$(find BP/blocks -name "*.block.json" 2>/dev/null | wc -l)
-          BP_FILES=$(find BP -type f 2>/dev/null | wc -l)
-          RP_FILES=$(find RP -type f 2>/dev/null | wc -l)
-          
-          echo "⏹️ Blocks: $BLOCK_COUNT"
-          echo "📦 BP files: $BP_FILES"
-          echo "📦 RP files: $RP_FILES"
-          
-          if [ "$BLOCK_COUNT" -eq 0 ]; then
-            echo "⚠️ Warning: No blocks found"
-          fi
-
-      - name: Test build script
-        run: |
-          echo "🔨 Testing build script..."
-          
-                     if [ -f "build.py" ]; then
-             # Test if script can be imported
-             python3 -c "import build" 2>/dev/null && echo "✅ Build script is valid Python"
-             
-             # Test help
-             python3 build.py --help > /dev/null && echo "✅ Build script help works"
-           else
-             echo "❌ build.py not found"
-             exit 1
-           fi
-
-      - name: Check for texture issues
-        run: |
-          echo "🎨 Checking textures..."
-          
-          if [ -f "verify_textures.py" ]; then
-            echo "Running texture verification..."
-            python3 verify_textures.py || echo "⚠️ Texture verification found issues"
-          else
-            echo "⚠️ verify_textures.py not found, skipping texture check"
-          fi
+          echo "🔍 Running comprehensive project verification..."
+          python3 verify_all.py
 
   comment:
     needs: verify
