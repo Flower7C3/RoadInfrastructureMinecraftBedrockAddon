@@ -16,6 +16,15 @@
     "paving_slabs_stone": {
       "textures": "textures/blocks/paving_slabs_stone.jpg"
     },
+    "paving_slabs_ceramic": {
+      "textures": "textures/blocks/paving_slabs_ceramic.jpg"
+    },
+    "paving_slabs_pattern": {
+      "textures": "textures/blocks/paving_slabs_pattern.jpg"
+    },
+    "paving_slabs_decorative": {
+      "textures": "textures/blocks/paving_slabs_decorative.jpg"
+    },
     "3d_turn": {
       "textures": "textures/blocks/road_marking_turn_3d.png"
     },

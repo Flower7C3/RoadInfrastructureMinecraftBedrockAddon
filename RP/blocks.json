@@ -15,6 +15,15 @@
   "paving_slabs_stone": {
     "sound": "stone"
   },
+  "paving_slabs_ceramic": {
+    "sound": "stone"
+  },
+  "paving_slabs_pattern": {
+    "sound": "stone"
+  },
+  "paving_slabs_decorative": {
+    "sound": "stone"
+  },
   "3d_turn": {
     "sound": "stone"
   },

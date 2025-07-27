@@ -29,6 +29,9 @@
               "jct:paving_slabs_squares",
               "jct:paving_slabs_flower",
               "jct:paving_slabs_stone",
+              "jct:paving_slabs_ceramic",
+              "jct:paving_slabs_pattern",
+              "jct:paving_slabs_decorative",
               "jct:kerbstone",
               "jct:zebra_crossing_down",
               "jct:zebra_crossing_top"
