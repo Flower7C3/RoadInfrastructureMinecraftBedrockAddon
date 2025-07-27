@@ -1,8 +1,3 @@
-# Build artifacts
-dist/
-*.mcaddon
-*.mcpack
-
 # Python
 __pycache__/
 *.py[cod]
@@ -49,6 +44,12 @@ venv.bak/
 ehthumbs.db
 Thumbs.db
 
+# Minecraft
+*.mcaddon
+*.mcpack
+dist/*.mcaddon
+dist/*.mcpack
+
 # Logs
 *.log
 logs/
@@ -58,26 +59,5 @@ logs/
 *.temp
 *.bak
 *.backup
-
-# Minecraft world backups
-backup_*/
-
-# Migration scripts
-migrate_world_*.py
-
-# Documentation builds
-docs/_build/
-docs/build/
-
-# Test coverage
-.coverage
-htmlcov/
-.tox/
-.pytest_cache/
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+temp/
+tmp/
