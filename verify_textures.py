@@ -25,17 +25,33 @@ def extract_texture_from_block(block_data):
         for instance_name, instance_data in material_instances.items():
             if instance_name == 'up':
                 return instance_data.get('texture')
+            elif instance_name == '*' and 'up' not in material_instances:
+                # Jeśli nie ma 'up', użyj '*' jako fallback
+                return instance_data.get('texture')
         return None
     except Exception as e:
         print(f"❌ Błąd wyciągania tekstury: {e}")
         return None
 
-def check_texture_exists(texture_name, texture_dir):
+def check_texture_exists(texture_name, texture_dir, terrain_texture_file):
     """Sprawdza czy plik tekstury istnieje"""
     if not texture_name:
         return False
     
-    # Sprawdź różne możliwe rozszerzenia
+    # Sprawdź mapowanie w terrain_texture.json
+    terrain_data = load_json_file(terrain_texture_file)
+    if terrain_data:
+        texture_mappings = terrain_data.get('texture_data', {})
+        if texture_name in texture_mappings:
+            texture_path = texture_mappings[texture_name].get('textures', '')
+            if texture_path:
+                # Usuń prefix "textures/blocks/"
+                actual_texture_name = texture_path.replace('textures/blocks/', '')
+                full_path = os.path.join(texture_dir, actual_texture_name)
+                if os.path.exists(full_path):
+                    return True
+    
+    # Sprawdź różne możliwe rozszerzenia (fallback)
     for ext in ['.png', '.jpg', '.jpeg']:
         texture_path = os.path.join(texture_dir, f"{texture_name}{ext}")
         if os.path.exists(texture_path):
@@ -80,7 +96,7 @@ def verify_terrain_texture_mapping(terrain_texture_file, texture_dir):
         for texture_id, texture_name in missing_textures:
             print(f"   - {texture_id}: {texture_name}")
 
-def verify_block_textures(blocks_dir, texture_dir):
+def verify_block_textures(blocks_dir, texture_dir, terrain_texture_file):
     """Sprawdza wszystkie bloki i ich tekstury"""
     print("\n🔍 WERYFIKACJA BLOKÓW I TEKSTUR")
     print("=" * 60)
@@ -103,7 +119,7 @@ def verify_block_textures(blocks_dir, texture_dir):
         texture_name = extract_texture_from_block(block_data)
         
         if texture_name:
-            if check_texture_exists(texture_name, texture_dir):
+            if check_texture_exists(texture_name, texture_dir, terrain_texture_file):
                 valid_blocks.append((identifier, texture_name))
                 print(f"✅ {identifier} -> {texture_name}")
             else:
@@ -186,7 +202,7 @@ def main():
     
     # Wykonaj weryfikacje
     verify_terrain_texture_mapping(terrain_texture_file, texture_dir)
-    verify_block_textures(blocks_dir, texture_dir)
+    verify_block_textures(blocks_dir, texture_dir, terrain_texture_file)
     check_unused_textures(texture_dir, terrain_texture_file)
     
     print("\n✅ WERYFIKACJA ZAKOŃCZONA")
