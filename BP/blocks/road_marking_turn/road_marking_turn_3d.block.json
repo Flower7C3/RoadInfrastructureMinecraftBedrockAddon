@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:block": {
     "description": {
-      "identifier": "jct:3d_turn",
+      "identifier": "cityroads:3d_turn",
       "menu_category": {
         "category": "construction"
       },

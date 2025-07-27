@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:block": {
     "description": {
-      "identifier": "jct:paving_slabs_squares",
+      "identifier": "cityroads:paving_slabs_squares",
       "menu_category": {
         "category": "construction"
       }

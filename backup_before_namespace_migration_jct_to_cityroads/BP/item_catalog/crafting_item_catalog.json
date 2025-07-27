@@ -1,0 +1,158 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:crafting_items_catalog": {
+    "categories": [
+      {
+        "category_name": "construction",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "jct:base_road_16",
+              "name": "jct:base_roads"
+            },
+            "items": [
+              "jct:base_road_16",
+              "jct:road_marking_16",
+              "jct:road_marking_straight_half_16",
+              "jct:road_marking_oblique_16",
+              "jct:road_marking_v_style_16",
+              "jct:3d_turn",
+              "jct:road_marking_turn"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:paving_slabs_squares",
+              "name": "jct:pedestrian_slabs"
+            },
+            "items": [
+              "jct:paving_slabs_squares",
+              "jct:paving_slabs_flower",
+              "jct:paving_slabs_colorstone",
+              "jct:paving_slabs_ceramic",
+              "jct:paving_slabs_pattern",
+              "jct:paving_slabs_decorative",
+              "jct:paving_slabs_gray",
+              "jct:paving_slabs_tileable",
+              "jct:kerbstone",
+              "jct:road_zebra_crossing_edge",
+              "jct:road_zebra_crossing_middle"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:arrow_road_marking",
+              "name": "jct:road_marking_signs"
+            },
+            "items": [
+              "jct:arrow_road_marking",
+              "jct:road_marking_arrow_left",
+              "jct:road_marking_arrow_right",
+              "jct:short_arrow_marking",
+              "jct:road_marking_subordinate",
+              "jct:road_marking_stop",
+              "jct:road_marking_stop_st",
+              "jct:road_marking_stop_op"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:base_road_8",
+              "name": "jct:concrete_roads"
+            },
+            "items": [
+              "jct:base_road_1",
+              "jct:base_road_2",
+              "jct:base_road_3",
+              "jct:base_road_4",
+              "jct:base_road_5",
+              "jct:base_road_6",
+              "jct:base_road_7",
+              "jct:base_road_8",
+              "jct:base_road_9",
+              "jct:base_road_10",
+              "jct:base_road_11",
+              "jct:base_road_12",
+              "jct:base_road_13",
+              "jct:base_road_14",
+              "jct:base_road_15",
+              "jct:base_road_16"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:road_marking_8",
+              "name": "jct:straight_marking_roads"
+            },
+            "items": [
+              "jct:road_marking_1",
+              "jct:road_marking_2",
+              "jct:road_marking_3",
+              "jct:road_marking_4",
+              "jct:road_marking_5",
+              "jct:road_marking_6",
+              "jct:road_marking_7",
+              "jct:road_marking_8",
+              "jct:road_marking_9",
+              "jct:road_marking_10",
+              "jct:road_marking_11",
+              "jct:road_marking_12",
+              "jct:road_marking_13",
+              "jct:road_marking_14",
+              "jct:road_marking_15",
+              "jct:road_marking_16"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:road_marking_oblique_8",
+              "name": "jct:oblique_marking_roads"
+            },
+            "items": [
+              "jct:road_marking_oblique_1",
+              "jct:road_marking_oblique_2",
+              "jct:road_marking_oblique_3",
+              "jct:road_marking_oblique_4",
+              "jct:road_marking_oblique_5",
+              "jct:road_marking_oblique_6",
+              "jct:road_marking_oblique_7",
+              "jct:road_marking_oblique_8",
+              "jct:road_marking_oblique_9",
+              "jct:road_marking_oblique_10",
+              "jct:road_marking_oblique_11",
+              "jct:road_marking_oblique_12",
+              "jct:road_marking_oblique_13",
+              "jct:road_marking_oblique_14",
+              "jct:road_marking_oblique_15",
+              "jct:road_marking_oblique_16"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:road_marking_v_style_8",
+              "name": "jct:b_style_marking_roads"
+            },
+            "items": [
+              "jct:road_marking_v_style_1",
+              "jct:road_marking_v_style_2",
+              "jct:road_marking_v_style_3",
+              "jct:road_marking_v_style_4",
+              "jct:road_marking_v_style_5",
+              "jct:road_marking_v_style_6",
+              "jct:road_marking_v_style_7",
+              "jct:road_marking_v_style_8",
+              "jct:road_marking_v_style_9",
+              "jct:road_marking_v_style_10",
+              "jct:road_marking_v_style_11",
+              "jct:road_marking_v_style_12",
+              "jct:road_marking_v_style_13",
+              "jct:road_marking_v_style_14",
+              "jct:road_marking_v_style_15",
+              "jct:road_marking_v_style_16"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

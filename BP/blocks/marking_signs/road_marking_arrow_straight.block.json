@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:block": {
     "description": {
-      "identifier": "jct:arrow_road_marking",
+      "identifier": "cityroads:arrow_road_marking",
       "menu_category": {
         "category": "construction"
       },

@@ -9,30 +9,30 @@
   "paving_slabs_squares": {
     "sound": "stone"
   },
-      "paving_slabs_flower": {
-      "sound": "stone"
-    },
-    "paving_slabs_ceramic": {
+  "paving_slabs_flower": {
+    "sound": "stone"
+  },
+  "paving_slabs_ceramic": {
     "sound": "stone"
   },
   "paving_slabs_pattern": {
     "sound": "stone"
   },
-      "paving_slabs_decorative": {
-      "sound": "stone"
-    },
-    "paving_slabs_gray": {
-      "sound": "stone"
-    },
-    "paving_slabs_tileable": {
-      "sound": "stone"
-    },
-    "paving_slabs_colorstone": {
-      "sound": "stone"
-    },
-    "3d_turn": {
-      "sound": "stone"
-    },
+  "paving_slabs_decorative": {
+    "sound": "stone"
+  },
+  "paving_slabs_gray": {
+    "sound": "stone"
+  },
+  "paving_slabs_tileable": {
+    "sound": "stone"
+  },
+  "paving_slabs_colorstone": {
+    "sound": "stone"
+  },
+  "3d_turn": {
+    "sound": "stone"
+  },
   "road_marking_stop": {
     "sound": "stone"
   },
