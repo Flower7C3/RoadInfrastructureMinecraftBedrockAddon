@@ -95,12 +95,62 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
           name: build-artifacts
           path: dist/
+
+      - name: Validate project structure
+        run: |
+          echo "Checking project structure..."
+          test -f build.py || exit 1
+          test -d BP || exit 1
+          test -d RP || exit 1
+          test -f BP/manifest.json || exit 1
+          test -f RP/manifest.json || exit 1
+          echo "✅ Project structure is valid"
+
+      - name: Validate manifests
+        run: |
+          echo "Validating manifests..."
+          python3 -c "
+          import json
+          import sys
+          # Check BP manifest
+          with open('BP/manifest.json', 'r') as f:
+              bp_manifest = json.load(f)
+          print(f'BP version: {bp_manifest.get(\"header\", {}).get(\"version\", \"missing\")}')
+          # Check RP manifest
+          with open('RP/manifest.json', 'r') as f:
+              rp_manifest = json.load(f)
+          print(f'RP version: {rp_manifest.get(\"header\", {}).get(\"version\", \"missing\")}')
+          # Check if versions match
+          bp_version = bp_manifest.get('header', {}).get('version', [])
+          rp_version = rp_manifest.get('header', {}).get('version', [])
+          if bp_version != rp_version:
+              print('❌ Version mismatch between BP and RP manifests')
+              sys.exit(1)
+          else:
+              print('✅ Manifest versions match')
+          "
+
+      - name: Test build artifacts
+        run: |
+          echo "Testing build artifacts..."
+          if [ ! -f dist/*.mcaddon ]; then
+            echo "❌ No .mcaddon files found"
+            exit 1
+          fi
+          if [ ! -f dist/*.mcpack ]; then
+            echo "❌ No .mcpack files found"
+            exit 1
+          fi
+          echo "✅ Build artifacts present"
 
       - name: Test package integrity
         run: |
@@ -129,92 +179,38 @@ jobs:
           name: build-artifacts
           path: dist/
 
-      - name: Generate release notes
-        id: release_notes
-        run: |
-          echo "📝 Generating release notes..."
-          
-          # Get recent commits
-          COMMITS=$(git log --oneline -10)
-          
-          # Create release notes
-          cat > release_notes.md << 'EOF'
-          ## Road Infrastructure v${{ needs.build.outputs.version }}
-          
-          ### 📊 Statistics
-          - **Total Blocks**: ${{ needs.build.outputs.total_blocks }}
-          - **BP Files**: ${{ needs.build.outputs.bp_files }}
-          - **RP Files**: ${{ needs.build.outputs.rp_files }}
-          
-          ### 🛣️ Features
-          - Complete road infrastructure system
-          - Road markings and signs
-          - Pedestrian elements (sidewalks, crossings)
-          - Turn indicators and 3D elements
-          
-          ### 📋 Recent Changes
-          EOF
-          
-          # Add commits to notes
-          while IFS= read -r line; do
-            if [ ! -z "$line" ]; then
-              echo "- $line" >> release_notes.md
-            fi
-          done <<< "$COMMITS"
-          
-          cat >> release_notes.md << 'EOF'
-          
-          ### 🚀 Installation
-          1. Download the .mcaddon file
-          2. Open it in Minecraft Bedrock
-          3. Enable the resource pack in Global Resources
-          4. Enable 'Holiday Creator Features' in experiments
-          5. Create or edit a world with the features enabled
-          
-          ### 📦 Files Included
-          EOF
-          
-          # Add file list
-          for file in dist/*.mcaddon dist/*.mcpack; do
-            if [ -f "$file" ]; then
-              SIZE=$(du -h "$file" | cut -f1)
-              echo "- \`$(basename "$file")\` ($SIZE)" >> release_notes.md
-            fi
-          done
-          
-          # Read the notes and set output
-          NOTES=$(cat release_notes.md)
-          echo "notes<<EOF" >> $GITHUB_OUTPUT
-          echo "$NOTES" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
       - name: Create Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ needs.build.outputs.version }}
-          release_name: Road Infrastructure v${{ needs.build.outputs.version }}
-          body: ${{ steps.release_notes.outputs.notes }}
-          draft: false
-          prerelease: false
+          name: Release v${{ needs.build.outputs.version }}
+          body: |
+            ## Road Infrastructure v${{ needs.build.outputs.version }}
 
-      - name: Upload Release Assets
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/*.mcaddon
-          asset_name: RoadInfrastructure_v${{ needs.build.outputs.version }}.mcaddon
-          asset_content_type: application/octet-stream
+            ### 📦 Zawartość:
+            - **RoadInfrastructure.mcaddon** - Kompletny pakiet (lokalna instalacja)
+            - **RoadInfrastructure_BP.mcpack** - Behavior Pack (serwery)
+            - **RoadInfrastructure_RP.mcpack** - Resource Pack (serwery)
 
-      - name: Upload Release Assets (.mcpack)
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/*.mcpack
-          asset_name: RoadInfrastructure_v${{ needs.build.outputs.version }}.mcpack
-          asset_content_type: application/octet-stream 
+            ### 🛣️ Funkcje:
+            - Kompletny system infrastruktury drogowej
+            - Oznaczenia i znaki drogowe
+            - Elementy piesze (chodniki, przejścia)
+            - Wskaźniki skrętów i elementy 3D
+
+            ### 📋 Instalacja:
+            **Lokalnie:**
+            1. Otwórz plik `.mcaddon` w Minecraft
+            2. Aktywuj pakiety w ustawieniach świata
+
+            **Serwer:**
+            1. Wgraj oba pliki `.mcpack` na serwer
+            2. Aktywuj pakiety w ustawieniach świata
+
+            ### 📊 Statystyki:
+            - **${{ needs.build.outputs.total_blocks }} bloków** infrastruktury drogowej
+            - **${{ needs.build.outputs.bp_files }} plików BP**
+            - **${{ needs.build.outputs.rp_files }} plików RP**
+
+            ### 🚀 Ostatnie zmiany:
+            ${{ github.event.head_commit.message }} 
