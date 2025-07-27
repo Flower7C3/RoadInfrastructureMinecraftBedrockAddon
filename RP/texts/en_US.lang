@@ -77,6 +77,7 @@ tile.jct:paving_slabs_ceramic.name=Paving slabs Ceramic
 tile.jct:paving_slabs_pattern.name=Paving slabs Pattern
 tile.jct:paving_slabs_decorative.name=Paving slabs Decorative
 tile.jct:paving_slabs_gray.name=Paving slabs Gray
+tile.jct:paving_slabs_stone.name=Paving slabs Stone
 tile.jct:paving_slabs_tileable.name=Paving slabs Tileable
 tile.jct:paving_slabs_colorstone.name=Paving slabs Color Stone
 tile.jct:road_marking_stop.name=Stop (road marking)

@@ -28,6 +28,9 @@
     "paving_slabs_gray": {
       "textures": "textures/blocks/paving_slabs_gray.png"
     },
+    "paving_slabs_stone": {
+      "textures": "textures/blocks/paving_slabs_stone.png"
+    },
     "paving_slabs_tileable": {
       "textures": "textures/blocks/paving_slabs_tileable.png"
     },

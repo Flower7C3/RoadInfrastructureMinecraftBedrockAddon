@@ -27,6 +27,9 @@
     "paving_slabs_gray": {
       "sound": "stone"
     },
+    "paving_slabs_stone": {
+      "sound": "stone"
+    },
     "paving_slabs_tileable": {
       "sound": "stone"
     },

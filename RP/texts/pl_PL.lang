@@ -77,6 +77,7 @@ tile.jct:paving_slabs_ceramic.name=Płyta chodnikowa ceramiczna
 tile.jct:paving_slabs_pattern.name=Płyta chodnikowa wzorzysta
 tile.jct:paving_slabs_decorative.name=Płyta chodnikowa dekoracyjna
 tile.jct:paving_slabs_gray.name=Płyta chodnikowa szara
+tile.jct:paving_slabs_stone.name=Płyta chodnikowa kamienna
 tile.jct:paving_slabs_tileable.name=Płyta chodnikowa układana
 tile.jct:paving_slabs_colorstone.name=Płyta chodnikowa kolorowy kamień
 tile.jct:road_marking_stop.name=STOP (oznakowanie drogowe)
