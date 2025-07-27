@@ -12,6 +12,9 @@
   "paving_slabs_flower": {
     "sound": "stone"
   },
+  "paving_slabs_herringbone": {
+    "sound": "stone"
+  },
   "3d_turn": {
     "sound": "stone"
   },
