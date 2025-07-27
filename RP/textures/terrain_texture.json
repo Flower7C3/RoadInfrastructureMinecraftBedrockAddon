@@ -14,16 +14,16 @@
       "textures": "textures/blocks/paving_slabs_flower.png"
     },
     "paving_slabs_stone": {
-      "textures": "textures/blocks/paving_slabs_stone.jpg"
+      "textures": "textures/blocks/paving_slabs_stone.png"
     },
     "paving_slabs_ceramic": {
-      "textures": "textures/blocks/paving_slabs_ceramic.jpg"
+      "textures": "textures/blocks/paving_slabs_ceramic.png"
     },
     "paving_slabs_pattern": {
-      "textures": "textures/blocks/paving_slabs_pattern.jpg"
+      "textures": "textures/blocks/paving_slabs_pattern.png"
     },
     "paving_slabs_decorative": {
-      "textures": "textures/blocks/paving_slabs_decorative.jpg"
+      "textures": "textures/blocks/paving_slabs_decorative.png"
     },
     "3d_turn": {
       "textures": "textures/blocks/road_marking_turn_3d.png"
