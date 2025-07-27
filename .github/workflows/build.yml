@@ -58,10 +58,10 @@ jobs:
             echo "⚠️ verify_textures.py not found, skipping texture verification"
           fi
 
-      - name: Build all packages (.mcaddon and .mcpack)
+      - name: Bump version and build packages
         run: |
           echo "Building packages for: $(basename $(pwd))"
-          python3 build.py --all --no-bump
+          python3 build.py --all
 
       - name: Count files
         id: count_files
@@ -107,7 +107,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add BP/manifest.json RP/manifest.json
-          git commit -m "Auto-bump version after push" || exit 0
+          git commit -m "Auto-bump version for release" || exit 0
           git push origin main
 
   test:
