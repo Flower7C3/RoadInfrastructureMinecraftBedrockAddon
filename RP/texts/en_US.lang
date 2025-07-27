@@ -71,7 +71,6 @@ tile.jct:road_marking_v_style_15.name=V-style road marking #15
 tile.jct:road_marking_v_style_16.name=V-style road marking #16
 tile.jct:paving_slabs_squares.name=Paving slabs Squares
 tile.jct:paving_slabs_flower.name=Paving slabs Flower
-tile.jct:paving_slabs_herringbone.name=Paving slabs Herringbone
 tile.jct:road_marking_stop.name=Stop (road marking)
 tile.jct:road_marking_stop_st.name=Stop with letters ST (road marking)
 tile.jct:road_marking_stop_op.name=Stop with letters OP (road marking)
