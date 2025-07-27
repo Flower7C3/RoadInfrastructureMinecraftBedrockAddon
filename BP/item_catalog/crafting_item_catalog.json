@@ -35,8 +35,8 @@
               "jct:paving_slabs_gray",
               "jct:paving_slabs_tileable",
               "jct:kerbstone",
-              "jct:zebra_crossing_down",
-              "jct:zebra_crossing_top"
+              "jct:road_zebra_crossing_edge",
+              "jct:road_zebra_crossing_middle"
             ]
           },
           {

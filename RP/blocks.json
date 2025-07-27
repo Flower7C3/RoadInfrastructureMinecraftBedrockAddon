@@ -204,10 +204,10 @@
   "short_arrow_marking": {
     "sound": "stone"
   },
-  "zebra_crossing_down": {
+  "road_zebra_crossing_edge": {
     "sound": "stone"
   },
-  "zebra_crossing_top": {
+  "road_zebra_crossing_middle": {
     "sound": "stone"
   }
 }

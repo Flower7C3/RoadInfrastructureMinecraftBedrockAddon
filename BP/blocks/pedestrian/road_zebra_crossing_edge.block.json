@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:block": {
     "description": {
-      "identifier": "jct:zebra_crossing_top",
+      "identifier": "jct:road_zebra_crossing_edge",
       "menu_category": {
         "category": "construction"
       },
@@ -30,7 +30,7 @@
           "render_method": "alpha_test_single_sided"
         },
         "up": {
-          "texture": "zebra_crossing_top",
+          "texture": "road_zebra_crossing_edge",
           "render_method": "alpha_test_single_sided"
         }
       },

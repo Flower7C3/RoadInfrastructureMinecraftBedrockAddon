@@ -76,11 +76,11 @@
     "short_arrow_marking": {
       "textures": "textures/blocks/road_marking_arrow_short.png"
     },
-    "zebra_crossing_down": {
-      "textures": "textures/blocks/zebra_crossing_down.png"
+    "road_zebra_crossing_edge": {
+      "textures": "textures/blocks/road_zebra_crossing_edge.png"
     },
-    "zebra_crossing_top": {
-      "textures": "textures/blocks/zebra_crossing_top.png"
+    "road_zebra_crossing_middle": {
+      "textures": "textures/blocks/road_zebra_crossing_middle.png"
     }
   }
 }
