@@ -31,8 +31,14 @@
               "jct:paving_slabs_stone",
               "jct:paving_slabs_ceramic",
               "jct:paving_slabs_pattern",
-              "jct:paving_slabs_decorative",
-              "jct:kerbstone",
+                              "jct:paving_slabs_decorative",
+                "jct:paving_slabs_modern",
+                "jct:paving_slabs_gray",
+                "jct:paving_slabs_tileable",
+                "jct:paving_slabs_colorstone",
+                "jct:paving_slabs_architectural",
+                "jct:paving_slabs_3dpattern",
+                "jct:kerbstone",
               "jct:zebra_crossing_down",
               "jct:zebra_crossing_top"
             ]

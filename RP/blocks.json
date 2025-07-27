@@ -21,12 +21,30 @@
   "paving_slabs_pattern": {
     "sound": "stone"
   },
-  "paving_slabs_decorative": {
-    "sound": "stone"
-  },
-  "3d_turn": {
-    "sound": "stone"
-  },
+      "paving_slabs_decorative": {
+      "sound": "stone"
+    },
+    "paving_slabs_modern": {
+      "sound": "stone"
+    },
+    "paving_slabs_gray": {
+      "sound": "stone"
+    },
+    "paving_slabs_tileable": {
+      "sound": "stone"
+    },
+    "paving_slabs_colorstone": {
+      "sound": "stone"
+    },
+    "paving_slabs_architectural": {
+      "sound": "stone"
+    },
+    "paving_slabs_3dpattern": {
+      "sound": "stone"
+    },
+    "3d_turn": {
+      "sound": "stone"
+    },
   "road_marking_stop": {
     "sound": "stone"
   },
