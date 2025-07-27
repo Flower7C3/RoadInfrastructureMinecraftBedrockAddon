@@ -157,13 +157,6 @@ CityBuildingKit/
 python3 verify_textures.py
 ```
 
-### Migracja świata
-
-```bash
-# Migracja z jct na road_infrastructure
-python3 migrate_world_jct_to_road_infrastructure_with_path.py <ścieżka_do_świata>
-```
-
 ### Automatyczne wydawanie
 
 Projekt używa GitHub Actions do automatycznego budowania i wydawania wersji. Każdy push do gałęzi `main` automatycznie:
