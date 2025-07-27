@@ -71,6 +71,7 @@ tile.jct:road_marking_v_style_15.name=Linia drogowa V #15
 tile.jct:road_marking_v_style_16.name=Linia drogowa V #16
 tile.jct:paving_slabs_squares.name=Płyta chodnikowa kwadratowa
 tile.jct:paving_slabs_flower.name=Płyta chodnikowa kwiatowa
+tile.jct:paving_slabs_stone.name=Płyta chodnikowa kamienna
 tile.jct:road_marking_stop.name=STOP (oznakowanie drogowe)
 tile.jct:road_marking_stop_st.name=STOP z literami "ST" (road marking)
 tile.jct:road_marking_stop_op.name=STOP z literami "OP" (road marking)

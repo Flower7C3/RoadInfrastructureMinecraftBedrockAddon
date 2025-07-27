@@ -13,6 +13,9 @@
     "paving_slabs_flower": {
       "textures": "textures/blocks/paving_slabs_flower.png"
     },
+    "paving_slabs_stone": {
+      "textures": "textures/blocks/paving_slabs_stone.jpg"
+    },
     "3d_turn": {
       "textures": "textures/blocks/road_marking_turn_3d.png"
     },
