@@ -37,7 +37,7 @@ Ten addon dodaje do Minecraft kompletną infrastrukturę drogową, w tym:
 
 #### Metoda 1: Automatyczna instalacja (zalecana)
 
-1. Pobierz plik `.mcaddon` z sekcji [Releases](https://github.com/RoadInfrastructureMinecraftBedrockAddon/releases)
+1. Pobierz plik `.mcaddon` z sekcji [Releases](https://github.com/road-infrastructure-minecraft-bedrock-addon/releases)
 2. Uruchom skrypt instalacji:
    ```bash
    python3 build.py --mcaddon --test-on-local
