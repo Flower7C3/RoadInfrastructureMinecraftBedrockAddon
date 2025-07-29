@@ -11,7 +11,7 @@ import sys
 import argparse
 from datetime import datetime
 from pathlib import Path
-from console_utils import ConsoleStyle, print_header
+from console_utils import ConsoleStyle, print_header, print_installation_info
 
 # Pack name from directory name
 PACK_NAME = os.path.basename(os.getcwd())
@@ -58,7 +58,7 @@ def install_mcaddon(mcaddon_path, clean_existing=True):
         print(ConsoleStyle.error("Cannot auto-detect Minecraft com.mojang directory. Installation failed."))
         return False
 
-    print(ConsoleStyle.info(f"Minecraft directory: {mc_dir}"))
+    print(ConsoleStyle.info(f"Minecraft directory [{mc_dir}]"))
 
     # Remove existing packs if requested
     if clean_existing:
@@ -84,7 +84,7 @@ def install_mcaddon(mcaddon_path, clean_existing=True):
                 shutil.copyfileobj(src, dst)
             file_count += 1
 
-    print(ConsoleStyle.success(f"Installed {file_count} files"))
+    print(ConsoleStyle.success(f"Installed [{file_count}] files"))
     print_installation_info(PACK_NAME, mc_dir)
     return True
 
@@ -107,9 +107,9 @@ def update_version(file_path, new_version):
     """Update version in manifest file"""
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
-    
+
     data['header']['version'] = new_version
-    
+
     # Update all module versions
     for module in data.get('modules', []):
         if 'version' in module:
@@ -129,10 +129,10 @@ def update_version(file_path, new_version):
 def build_mcaddon(bp_version, rp_version, plugin_name, output_dir, timestamp):
     """Build the .mcaddon package"""
     print(ConsoleStyle.process("Building .mcaddon package..."))
-    
+
     mcaddon_name = f"{plugin_name}_v{bp_version[0]}.{bp_version[1]}.{bp_version[2]}_{timestamp}.mcaddon"
     mcaddon_path = os.path.join(output_dir, mcaddon_name)
-    
+
     with zipfile.ZipFile(mcaddon_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
         # Add BP files
         for root, dirs, files in os.walk('BP'):
@@ -142,7 +142,7 @@ def build_mcaddon(bp_version, rp_version, plugin_name, output_dir, timestamp):
                 file_path = os.path.join(root, file)
                 arc_name = file_path
                 zipf.write(file_path, arc_name)
-        
+
         # Add RP files
         for root, dirs, files in os.walk('RP'):
             for file in files:
@@ -151,17 +151,17 @@ def build_mcaddon(bp_version, rp_version, plugin_name, output_dir, timestamp):
                 file_path = os.path.join(root, file)
                 arc_name = file_path
                 zipf.write(file_path, arc_name)
-    
+
     mcaddon_size = os.path.getsize(mcaddon_path) / 1024 / 1024
     print(ConsoleStyle.success(f"Created {mcaddon_name} ({mcaddon_size:.2f} MB)"))
-    
+
     return mcaddon_path, mcaddon_size
 
 
 def build_mcpack(bp_version, rp_version, bp_name, rp_name, output_dir, timestamp):
     """Build separate .mcpack files for BP and RP"""
     print(ConsoleStyle.process("Building .mcpack packages..."))
-    
+
     # Build BP .mcpack
     bp_plugin_name = bp_name.replace(" BP", "").replace(" ", "")
     bp_mcpack_name = f"{bp_plugin_name}_v{bp_version[0]}.{bp_version[1]}.{bp_version[2]}_{timestamp}.mcpack"
@@ -177,7 +177,7 @@ def build_mcpack(bp_version, rp_version, bp_name, rp_name, output_dir, timestamp
                 file_path = os.path.join(root, file)
                 arc_name = file_path
                 zipf.write(file_path, arc_name)
-    
+
     print(ConsoleStyle.success(f"BP utworzony: {bp_mcpack_path}"))
     print(ConsoleStyle.info(f"Rozmiar BP: {os.path.getsize(bp_mcpack_path) / 1024:.2f} KB"))
 
@@ -185,7 +185,7 @@ def build_mcpack(bp_version, rp_version, bp_name, rp_name, output_dir, timestamp
     rp_plugin_name = rp_name.replace(" RP", "").replace(" ", "")
     rp_mcpack_name = f"{rp_plugin_name}_v{rp_version[0]}.{rp_version[1]}.{rp_version[2]}_{timestamp}.mcpack"
     rp_mcpack_path = os.path.join(output_dir, rp_mcpack_name)
-    
+
     print(ConsoleStyle.process(f"Building {rp_mcpack_path}..."))
 
     with zipfile.ZipFile(rp_mcpack_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -196,11 +196,11 @@ def build_mcpack(bp_version, rp_version, bp_name, rp_name, output_dir, timestamp
                 file_path = os.path.join(root, file)
                 arc_name = file_path
                 zipf.write(file_path, arc_name)
-    
+
     # Calculate sizes after both files are created
     bp_size = os.path.getsize(bp_mcpack_path) / 1024 / 1024
     rp_size = os.path.getsize(rp_mcpack_path) / 1024 / 1024
-    
+
     print(ConsoleStyle.success(f"Created {bp_mcpack_path} ({bp_size:.2f} MB)"))
     print(ConsoleStyle.success(f"Created {rp_mcpack_path} ({rp_size:.2f} MB)"))
 
@@ -263,9 +263,9 @@ examples:
 
         bp_version = new_bp_version
         rp_version = new_rp_version
-        print(ConsoleStyle.success(f"Version bumped to {bp_version[0]}.{bp_version[1]}.{bp_version[2]}"))
+        print(ConsoleStyle.success(f"Version bumped to [{bp_version[0]}.{bp_version[1]}.{bp_version[2]}]"))
 
-    # Create output directory
+    # Create an output directory
     output_dir = 'dist'
     if os.path.exists(output_dir):
         shutil.rmtree(output_dir)
@@ -297,7 +297,7 @@ examples:
         print(f"📦 .mcpack: {os.path.basename(bp_mcpack_path)}, {os.path.basename(rp_mcpack_path)}")
 
     # Install to local Minecraft if requested
-    if args.test_on_local and mcaddon_path:
+    if args.test_on_local:
         ConsoleStyle.print_section("INSTALLATION", "")
         print(ConsoleStyle.process("Installing to local Minecraft..."))
         clean_existing = not args.no_clean
@@ -306,7 +306,6 @@ examples:
         else:
             print(ConsoleStyle.error("Installation failed!"))
 
-    ConsoleStyle.print_section("COMPLETION", "")
     print(ConsoleStyle.success("Build completed successfully!"))
 
 
