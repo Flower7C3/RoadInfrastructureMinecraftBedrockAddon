@@ -3,7 +3,7 @@
 # Python Virtual Environment Setup Script
 # For macOS development
 
-echo "🚦 Setting up Python virtual environment..."
+echo "🖥️ Setting up Python virtual environment..."
 
 # Check if Python 3 is installed
 if ! command -v python3 &> /dev/null; then
