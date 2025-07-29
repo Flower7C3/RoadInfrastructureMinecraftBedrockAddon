@@ -3,9 +3,9 @@
   "minecraft:geometry": [
     {
       "description": {
-        "identifier": "geometry.base_road_4",
-        "texture_width": 128,
-        "texture_height": 128,
+        "identifier": "geometry.base_road_3",
+        "texture_width": 16,
+        "texture_height": 16,
         "visible_bounds_width": 2,
         "visible_bounds_height": 2.5,
         "visible_bounds_offset": [
@@ -41,8 +41,8 @@
                     12
                   ],
                   "uv_size": [
-                    128,
-                    32
+                    16,
+                    4
                   ]
                 },
                 "east": {
@@ -51,8 +51,8 @@
                     12
                   ],
                   "uv_size": [
-                    128,
-                    32
+                    16,
+                    4
                   ]
                 },
                 "south": {
@@ -61,8 +61,8 @@
                     12
                   ],
                   "uv_size": [
-                    128,
-                    32
+                    16,
+                    4
                   ]
                 },
                 "west": {
@@ -71,8 +71,8 @@
                     12
                   ],
                   "uv_size": [
-                    128,
-                    32
+                    16,
+                    4
                   ]
                 },
                 "up": {
