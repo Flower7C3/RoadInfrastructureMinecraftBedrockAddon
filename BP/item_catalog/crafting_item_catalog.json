@@ -83,8 +83,7 @@
               "jct:base_road_12",
               "jct:base_road_13",
               "jct:base_road_14",
-              "jct:base_road_15",
-              "jct:base_road_16"
+              "jct:base_road_15"
             ]
           },
           {
@@ -107,8 +106,7 @@
               "jct:road_marking_12",
               "jct:road_marking_13",
               "jct:road_marking_14",
-              "jct:road_marking_15",
-              "jct:road_marking_16"
+              "jct:road_marking_15"
             ]
           },
           {
@@ -131,8 +129,7 @@
               "jct:road_marking_oblique_12",
               "jct:road_marking_oblique_13",
               "jct:road_marking_oblique_14",
-              "jct:road_marking_oblique_15",
-              "jct:road_marking_oblique_16"
+              "jct:road_marking_oblique_15"
             ]
           },
           {
@@ -155,8 +152,7 @@
               "jct:road_marking_v_style_12",
               "jct:road_marking_v_style_13",
               "jct:road_marking_v_style_14",
-              "jct:road_marking_v_style_15",
-              "jct:road_marking_v_style_16"
+              "jct:road_marking_v_style_15"
             ]
           }
         ]
