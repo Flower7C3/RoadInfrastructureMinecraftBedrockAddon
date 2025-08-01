@@ -91,15 +91,6 @@ jobs:
           echo "total_blocks=$TOTAL_BLOCKS" >> $GITHUB_OUTPUT
           echo "⏹️ Total blocks: $TOTAL_BLOCKS"
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifacts
-          path: |
-            dist/*.mcaddon
-            dist/*.mcpack
-          retention-days: 30
-
       - name: Commit and push version bump (only on main)
         if: github.ref == 'refs/heads/main'
         run: |
