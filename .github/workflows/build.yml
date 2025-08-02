@@ -85,7 +85,7 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "📋 Version: $VERSION"
 
-      - name: Get version and statistics for release
+      - name: Get statistics for release
         id: get_version_stats
         run: |
           TOTAL_BLOCKS=$(find BP/blocks -name "*.block.json" | wc -l)
@@ -95,8 +95,8 @@ jobs:
       - name: Get changelog from last tag
         id: get_changelog
         run: |
-          # Get the last tag
-          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          # Get the last tag in HEAD history
+          LAST_TAG=$(git describe --tags --abbrev=0 HEAD 2>/dev/null || echo "")
           
           if [ -n "$LAST_TAG" ]; then
             # Get commits since last tag
@@ -109,8 +109,13 @@ jobs:
             CHANGELOG=$(git log --oneline --no-merges -10)
           fi
           
+          # Ensure we have some content
+          if [ -z "$CHANGELOG" ]; then
+            CHANGELOG="No changes detected"
+          fi
+          
           # Escape newlines for GitHub Actions
-          CHANGELOG_ESCAPED=$(echo "$CHANGELOG" | tr '\n' '\\n')
+          CHANGELOG_ESCAPED=$(printf "%s" "$CHANGELOG" | tr '\n' '\\n')
           echo "changelog=$CHANGELOG_ESCAPED" >> $GITHUB_OUTPUT
           echo "📝 Changelog generated from ${LAST_TAG:-'beginning'} to HEAD"
 
@@ -132,6 +137,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+          fetch-tags: true
 
       - name: Download build artifacts
         uses: actions/download-artifact@v4
@@ -200,4 +206,4 @@ jobs:
             - **${{ needs.build.outputs.total_blocks }} bloków** infrastruktury drogowej
 
             ### 🚀 Ostatnie zmiany:
-            ${{ steps.get_changelog.outputs.changelog }} 
+            ${{ needs.build.outputs.changelog }} 
