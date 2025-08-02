@@ -39,6 +39,7 @@ jobs:
       rp_files: ${{ steps.count_files.outputs.rp_files }}
       version: ${{ steps.get_version.outputs.version }}
       total_blocks: ${{ steps.get_version_stats.outputs.total_blocks }}
+      changelog: ${{ steps.get_changelog.outputs.changelog }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -90,6 +91,28 @@ jobs:
           TOTAL_BLOCKS=$(find BP/blocks -name "*.block.json" | wc -l)
           echo "total_blocks=$TOTAL_BLOCKS" >> $GITHUB_OUTPUT
           echo "⏹️ Total blocks: $TOTAL_BLOCKS"
+
+      - name: Get changelog from last tag
+        id: get_changelog
+        run: |
+          # Get the last tag
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          
+          if [ -n "$LAST_TAG" ]; then
+            # Get commits since last tag
+            CHANGELOG=$(git log --oneline --no-merges "${LAST_TAG}..HEAD" | head -10)
+            if [ -z "$CHANGELOG" ]; then
+              CHANGELOG="No changes since last release"
+            fi
+          else
+            # If no tags exist, get last 10 commits
+            CHANGELOG=$(git log --oneline --no-merges -10)
+          fi
+          
+          # Escape newlines for GitHub Actions
+          CHANGELOG_ESCAPED=$(echo "$CHANGELOG" | sed ':a;N;$!ba;s/\n/\\n/g')
+          echo "changelog=$CHANGELOG_ESCAPED" >> $GITHUB_OUTPUT
+          echo "📝 Changelog generated from ${LAST_TAG:-'beginning'} to HEAD"
 
       - name: Commit and push version bump (only on main)
         if: github.ref == 'refs/heads/main'
@@ -177,4 +200,4 @@ jobs:
             - **${{ needs.build.outputs.total_blocks }} bloków** infrastruktury drogowej
 
             ### 🚀 Ostatnie zmiany:
-            ${{ github.event.head_commit.message }} 
+            ${{ steps.get_changelog.outputs.changelog }} 
