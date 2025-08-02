@@ -52,6 +52,7 @@ def remove_existing_packs(mc_dir):
 
 def install_mcaddon(mcaddon_path, clean_existing=True):
     """Install .mcaddon file to the local Minecraft directory"""
+    ConsoleStyle.print_section("INSTALLATION", icon='🖥')
     mc_dir = get_minecraft_dir()
     if not mc_dir:
         print(ConsoleStyle.error("Cannot auto-detect Minecraft com.mojang directory. Installation failed."))
@@ -133,7 +134,7 @@ def build_mcaddon(bp_version, rp_version, plugin_name, output_dir, timestamp, si
         mcaddon_name = f"{plugin_name}_v{bp_version[0]}.{bp_version[1]}.{bp_version[2]}_{timestamp}.mcaddon"
     mcaddon_path = os.path.join(output_dir, mcaddon_name)
 
-    print(ConsoleStyle.process(f"Building {mcaddon_name}..."))
+    ConsoleStyle.print_section(f"Building {mcaddon_name}...", icon='⚒️')
 
     with zipfile.ZipFile(mcaddon_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
         # Add BP files
@@ -170,7 +171,7 @@ def build_mcpack(bp_version, rp_version, bp_plugin_name, rp_plugin_name, output_
         bp_mcpack_name = f"{bp_plugin_name}_v{bp_version[0]}.{bp_version[1]}.{bp_version[2]}_{timestamp}.mcpack"
     bp_mcpack_path = os.path.join(output_dir, bp_mcpack_name)
 
-    print(ConsoleStyle.process(f"Building {bp_mcpack_name}..."))
+    ConsoleStyle.print_section(f"Building {bp_mcpack_name}...", icon='⚒️')
 
     with zipfile.ZipFile(bp_mcpack_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
         for root, dirs, files in os.walk('BP'):
@@ -191,7 +192,7 @@ def build_mcpack(bp_version, rp_version, bp_plugin_name, rp_plugin_name, output_
         rp_mcpack_name = f"{rp_plugin_name}_v{rp_version[0]}.{rp_version[1]}.{rp_version[2]}_{timestamp}.mcpack"
     rp_mcpack_path = os.path.join(output_dir, rp_mcpack_name)
 
-    print(ConsoleStyle.process(f"Building {rp_mcpack_path}..."))
+    ConsoleStyle.print_section(f"Building {rp_mcpack_path}...", icon='⚒️')
 
     with zipfile.ZipFile(rp_mcpack_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
         for root, dirs, files in os.walk('RP'):
@@ -292,25 +293,18 @@ examples:
         )
 
     stats = {
-        "📦Total files": count_files()
+        ConsoleStyle.info("Total files", icon='📦'): count_files()
     }
     if mcaddon_path:
-        stats["📦 .mcaddon"] = os.path.basename(mcaddon_path)
+        stats[ConsoleStyle.info(".mcaddon", icon='📦')] = os.path.basename(mcaddon_path)
     if bp_mcpack_path and rp_mcpack_path:
-        stats["📦 .mcpack"] = f"{os.path.basename(bp_mcpack_path)}, {os.path.basename(rp_mcpack_path)}"
+        stats[ConsoleStyle.info(".mcpack",
+                                icon='📦')] = f"{os.path.basename(bp_mcpack_path)}, {os.path.basename(rp_mcpack_path)}"
     ConsoleStyle.print_stats(stats, "BUILD SUMMARY")
 
     # Install to local Minecraft if requested
     if args.test_on_local:
-        ConsoleStyle.print_section("INSTALLATION", "")
-        print(ConsoleStyle.process("Installing to local Minecraft..."))
-        clean_existing = not args.no_clean
-        if install_mcaddon(mcaddon_path, clean_existing):
-            print(ConsoleStyle.success("Installation completed successfully!"))
-        else:
-            print(ConsoleStyle.error("Installation failed!"))
-
-    print(ConsoleStyle.success("Build completed successfully!"))
+        install_mcaddon(mcaddon_path, not args.no_clean)
 
 
 if __name__ == "__main__":
