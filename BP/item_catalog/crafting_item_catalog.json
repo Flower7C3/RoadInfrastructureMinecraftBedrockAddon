@@ -34,6 +34,16 @@
               "jct:paving_slabs_decorative",
               "jct:paving_slabs_gray",
               "jct:paving_slabs_tileable",
+              "jct:paving_slabs_squares_8",
+              "jct:paving_slabs_flower_8",
+              "jct:paving_slabs_colorstone_8",
+              "jct:paving_slabs_ceramic_8",
+              "jct:paving_slabs_pattern_8",
+              "jct:paving_slabs_decorative_8",
+              "jct:paving_slabs_gray_8",
+              "jct:paving_slabs_tileable_8",
+              "jct:road_zebra_crossing_edge",
+              "jct:road_zebra_crossing_middle",
               "jct:paving_slabs_squares_2",
               "jct:paving_slabs_flower_2",
               "jct:paving_slabs_colorstone_2",
@@ -41,10 +51,7 @@
               "jct:paving_slabs_pattern_2",
               "jct:paving_slabs_decorative_2",
               "jct:paving_slabs_gray_2",
-              "jct:paving_slabs_tileable_2",
-              "jct:kerbstone",
-              "jct:road_zebra_crossing_edge",
-              "jct:road_zebra_crossing_middle"
+              "jct:paving_slabs_tileable_2"
             ]
           },
           {
