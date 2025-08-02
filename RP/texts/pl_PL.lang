@@ -5,6 +5,7 @@ jct:straight_marking_roads=Linie drogowe proste
 jct:oblique_marking_roads=Linie drogowe ukośnie
 jct:b_style_marking_roads=Linie drogowe w stylu V
 jct:road_marking_signs=Znaki drogowe
+
 tile.jct:base_road_1.name=Droga betonowa #1
 tile.jct:base_road_2.name=Droga betonowa #2
 tile.jct:base_road_3.name=Droga betonowa #3
@@ -21,6 +22,7 @@ tile.jct:base_road_13.name=Droga betonowa #13
 tile.jct:base_road_14.name=Droga betonowa #14
 tile.jct:base_road_15.name=Droga betonowa #15
 tile.jct:base_road_16.name=Droga betonowa #16
+
 tile.jct:road_marking_1.name=Linia drogowa prosta #1
 tile.jct:road_marking_2.name=Linia drogowa prosta #2
 tile.jct:road_marking_3.name=Linia drogowa prosta #3
@@ -37,7 +39,9 @@ tile.jct:road_marking_13.name=Linia drogowa prosta #13
 tile.jct:road_marking_14.name=Linia drogowa prosta #14
 tile.jct:road_marking_15.name=Linia drogowa prosta #15
 tile.jct:road_marking_16.name=Linia drogowa prosta #16
+
 tile.jct:road_marking_straight_half_16.name=Linia drogowa prosta skrócona #16
+
 tile.jct:road_marking_oblique_1.name=Linia drogowa ukośna #1
 tile.jct:road_marking_oblique_2.name=Linia drogowa ukośna #2
 tile.jct:road_marking_oblique_3.name=Linia drogowa ukośna #3
@@ -54,6 +58,7 @@ tile.jct:road_marking_oblique_13.name=Linia drogowa ukośna #13
 tile.jct:road_marking_oblique_14.name=Linia drogowa ukośna #14
 tile.jct:road_marking_oblique_15.name=Linia drogowa ukośna #15
 tile.jct:road_marking_oblique_16.name=Linia drogowa ukośna #16
+
 tile.jct:road_marking_v_style_1.name=Linia drogowa V #1
 tile.jct:road_marking_v_style_2.name=Linia drogowa V #2
 tile.jct:road_marking_v_style_3.name=Linia drogowa V #3
@@ -70,6 +75,7 @@ tile.jct:road_marking_v_style_13.name=Linia drogowa V #13
 tile.jct:road_marking_v_style_14.name=Linia drogowa V #14
 tile.jct:road_marking_v_style_15.name=Linia drogowa V #15
 tile.jct:road_marking_v_style_16.name=Linia drogowa V #16
+
 tile.jct:paving_slabs_squares.name=Płyta chodnikowa kwadratowa
 tile.jct:paving_slabs_flower.name=Płyta chodnikowa kwiatowa
 tile.jct:paving_slabs_ceramic.name=Płyta chodnikowa ceramiczna
@@ -78,6 +84,7 @@ tile.jct:paving_slabs_decorative.name=Płyta chodnikowa dekoracyjna
 tile.jct:paving_slabs_gray.name=Płyta chodnikowa szara
 tile.jct:paving_slabs_tileable.name=Płyta chodnikowa układana
 tile.jct:paving_slabs_colorstone.name=Płyta chodnikowa kolorowy kamień
+
 tile.jct:paving_slabs_squares_2.name=Płyta chodnikowa kwadratowa #2
 tile.jct:paving_slabs_flower_2.name=Płyta chodnikowa kwiatowa #2
 tile.jct:paving_slabs_ceramic_2.name=Płyta chodnikowa ceramiczna #2
@@ -86,6 +93,16 @@ tile.jct:paving_slabs_decorative_2.name=Płyta chodnikowa dekoracyjna #2
 tile.jct:paving_slabs_gray_2.name=Płyta chodnikowa szara #2
 tile.jct:paving_slabs_tileable_2.name=Płyta chodnikowa układana #2
 tile.jct:paving_slabs_colorstone_2.name=Płyta chodnikowa kolorowy kamień #2
+
+tile.jct:paving_slabs_squares_8.name=Płyta chodnikowa kwadratowa #8
+tile.jct:paving_slabs_flower_8.name=Płyta chodnikowa kwiatowa #8
+tile.jct:paving_slabs_ceramic_8.name=Płyta chodnikowa ceramiczna #8
+tile.jct:paving_slabs_pattern_8.name=Płyta chodnikowa wzorzysta #8
+tile.jct:paving_slabs_decorative_8.name=Płyta chodnikowa dekoracyjna #8
+tile.jct:paving_slabs_gray_8.name=Płyta chodnikowa szara #8
+tile.jct:paving_slabs_tileable_8.name=Płyta chodnikowa układana #8
+tile.jct:paving_slabs_colorstone_8.name=Płyta chodnikowa kolorowy kamień #8
+
 tile.jct:road_marking_stop.name=STOP (oznakowanie drogowe)
 tile.jct:road_marking_stop_st.name=STOP z literami "ST" (road marking)
 tile.jct:road_marking_stop_op.name=STOP z literami "OP" (road marking)

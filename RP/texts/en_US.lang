@@ -5,6 +5,7 @@ jct:straight_marking_roads=Straight roads markings
 jct:oblique_marking_roads=Oblique road marking
 jct:b_style_marking_roads=V-style road marking
 jct:road_marking_signs=Road marking signs
+
 tile.jct:base_road_1.name=Concrete road #1
 tile.jct:base_road_2.name=Concrete road #2
 tile.jct:base_road_3.name=Concrete road #3
@@ -21,6 +22,7 @@ tile.jct:base_road_13.name=Concrete road #13
 tile.jct:base_road_14.name=Concrete road #14
 tile.jct:base_road_15.name=Concrete road #15
 tile.jct:base_road_16.name=Concrete road #16
+
 tile.jct:road_marking_1.name=Straight road marking #1
 tile.jct:road_marking_2.name=Straight road marking #2
 tile.jct:road_marking_3.name=Straight road marking #3
@@ -37,7 +39,9 @@ tile.jct:road_marking_13.name=Straight road marking #13
 tile.jct:road_marking_14.name=Straight road marking #14
 tile.jct:road_marking_15.name=Straight road marking #15
 tile.jct:road_marking_16.name=Straight road marking #16
+
 tile.jct:road_marking_straight_half_16.name=Straight road marking half#16
+
 tile.jct:road_marking_oblique_1.name=Oblique road marking #1
 tile.jct:road_marking_oblique_2.name=Oblique road marking #2
 tile.jct:road_marking_oblique_3.name=Oblique road marking #3
@@ -54,6 +58,7 @@ tile.jct:road_marking_oblique_13.name=Oblique road marking #13
 tile.jct:road_marking_oblique_14.name=Oblique road marking #14
 tile.jct:road_marking_oblique_15.name=Oblique road marking #15
 tile.jct:road_marking_oblique_16.name=Oblique road marking #16
+
 tile.jct:road_marking_v_style_1.name=V-style road marking #1
 tile.jct:road_marking_v_style_2.name=V-style road marking #2
 tile.jct:road_marking_v_style_3.name=V-style road marking #3
@@ -70,6 +75,7 @@ tile.jct:road_marking_v_style_13.name=V-style road marking #13
 tile.jct:road_marking_v_style_14.name=V-style road marking #14
 tile.jct:road_marking_v_style_15.name=V-style road marking #15
 tile.jct:road_marking_v_style_16.name=V-style road marking #16
+
 tile.jct:paving_slabs_squares.name=Paving slabs Squares
 tile.jct:paving_slabs_flower.name=Paving slabs Flower
 tile.jct:paving_slabs_ceramic.name=Paving slabs Ceramic
@@ -78,6 +84,7 @@ tile.jct:paving_slabs_decorative.name=Paving slabs Decorative
 tile.jct:paving_slabs_gray.name=Paving slabs Gray
 tile.jct:paving_slabs_tileable.name=Paving slabs Tileable
 tile.jct:paving_slabs_colorstone.name=Paving slabs Color Stone
+
 tile.jct:paving_slabs_squares_2.name=Paving slabs Squares #2
 tile.jct:paving_slabs_flower_2.name=Paving slabs Flower #2
 tile.jct:paving_slabs_ceramic_2.name=Paving slabs Ceramic #2
@@ -86,6 +93,16 @@ tile.jct:paving_slabs_decorative_2.name=Paving slabs Decorative #2
 tile.jct:paving_slabs_gray_2.name=Paving slabs Gray #2
 tile.jct:paving_slabs_tileable_2.name=Paving slabs Tileable #2
 tile.jct:paving_slabs_colorstone_2.name=Paving slabs Color Stone #2
+
+tile.jct:paving_slabs_squares_8.name=Paving slabs Squares #8
+tile.jct:paving_slabs_flower_8.name=Paving slabs Flower #8
+tile.jct:paving_slabs_ceramic_8.name=Paving slabs Ceramic #8
+tile.jct:paving_slabs_pattern_8.name=Paving slabs Pattern #8
+tile.jct:paving_slabs_decorative_8.name=Paving slabs Decorative #8
+tile.jct:paving_slabs_gray_8.name=Paving slabs Gray #8
+tile.jct:paving_slabs_tileable_8.name=Paving slabs Tileable #8
+tile.jct:paving_slabs_colorstone_8.name=Paving slabs Color Stone #8
+
 tile.jct:road_marking_stop.name=Stop (road marking)
 tile.jct:road_marking_stop_st.name=Stop with letters ST (road marking)
 tile.jct:road_marking_stop_op.name=Stop with letters OP (road marking)
