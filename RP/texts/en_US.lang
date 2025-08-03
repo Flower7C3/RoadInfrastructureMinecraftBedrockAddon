@@ -115,4 +115,3 @@ tile.jct:3d_turn.name=Turn road marking 3D
 tile.jct:road_marking_turn.name=Turn road marking angle
 tile.jct:road_zebra_crossing_edge.name=Zebra crossing edge (road marking)
 tile.jct:road_zebra_crossing_middle.name=Zebra crossing middle (road marking)
-tile.jct:kerbstone.name=Road kerbstone

@@ -4,9 +4,6 @@
   "padding": 8,
   "num_mip_levels": 4,
   "texture_data": {
-    "kerbstone": {
-      "textures": "textures/blocks/kerbstone.png"
-    },
     "paving_slabs_squares": {
       "textures": "textures/blocks/paving_slabs_squares.png"
     },
