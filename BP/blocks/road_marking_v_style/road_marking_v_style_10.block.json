@@ -59,6 +59,7 @@
           "texture": "road_marking",
           "render_method": "alpha_test_single_sided"
         },
+        "west": "marking",
         "east": "marking",
         "south": "marking"
       },
