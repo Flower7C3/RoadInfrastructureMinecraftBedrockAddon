@@ -22,6 +22,70 @@
           },
           {
             "group_identifier": {
+              "icon": "jct:base_road_ramp_45",
+              "name": "jct:road_ramps"
+            },
+            "items": [
+              "jct:base_road_ramp_45",
+              "jct:base_road_ramp_22_5_part1",
+              "jct:base_road_ramp_22_5_part2",
+              "jct:base_road_ramp_15_part1",
+              "jct:base_road_ramp_15_part2",
+              "jct:base_road_ramp_15_part3",
+              "jct:base_road_ramp_11_25_part1",
+              "jct:base_road_ramp_11_25_part2",
+              "jct:base_road_ramp_11_25_part3",
+              "jct:base_road_ramp_11_25_part4",
+              "jct:base_road_ramp_7_5_part1",
+              "jct:base_road_ramp_7_5_part2",
+              "jct:base_road_ramp_7_5_part3",
+              "jct:base_road_ramp_7_5_part4",
+              "jct:base_road_ramp_7_5_part5",
+              "jct:base_road_ramp_7_5_part6",
+              "jct:base_road_ramp_5_625_part1",
+              "jct:base_road_ramp_5_625_part2",
+              "jct:base_road_ramp_5_625_part3",
+              "jct:base_road_ramp_5_625_part4",
+              "jct:base_road_ramp_5_625_part5",
+              "jct:base_road_ramp_5_625_part6",
+              "jct:base_road_ramp_5_625_part7",
+              "jct:base_road_ramp_5_625_part8"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:road_ramp_marking_45",
+              "name": "jct:road_marking_ramps"
+            },
+            "items": [
+              "jct:road_ramp_marking_45",
+              "jct:road_ramp_marking_22_5_part1",
+              "jct:road_ramp_marking_22_5_part2",
+              "jct:road_ramp_marking_15_part1",
+              "jct:road_ramp_marking_15_part2",
+              "jct:road_ramp_marking_15_part3",
+              "jct:road_ramp_marking_11_25_part1",
+              "jct:road_ramp_marking_11_25_part2",
+              "jct:road_ramp_marking_11_25_part3",
+              "jct:road_ramp_marking_11_25_part4",
+              "jct:road_ramp_marking_7_5_part1",
+              "jct:road_ramp_marking_7_5_part2",
+              "jct:road_ramp_marking_7_5_part3",
+              "jct:road_ramp_marking_7_5_part4",
+              "jct:road_ramp_marking_7_5_part5",
+              "jct:road_ramp_marking_7_5_part6",
+              "jct:road_ramp_marking_5_625_part1",
+              "jct:road_ramp_marking_5_625_part2",
+              "jct:road_ramp_marking_5_625_part3",
+              "jct:road_ramp_marking_5_625_part4",
+              "jct:road_ramp_marking_5_625_part5",
+              "jct:road_ramp_marking_5_625_part6",
+              "jct:road_ramp_marking_5_625_part7",
+              "jct:road_ramp_marking_5_625_part8"
+            ]
+          },
+          {
+            "group_identifier": {
               "icon": "jct:paving_slabs_squares",
               "name": "jct:pedestrian_slabs"
             },

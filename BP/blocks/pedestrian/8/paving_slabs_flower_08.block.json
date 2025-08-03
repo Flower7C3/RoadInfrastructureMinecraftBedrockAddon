@@ -8,7 +8,7 @@
       }
     },
     "components": {
-     "minecraft:collision_box": {
+      "minecraft:collision_box": {
         "origin": [
           -8,
           0,

@@ -78,6 +78,9 @@
     },
     "road_zebra_crossing_middle": {
       "textures": "textures/blocks/road_zebra_crossing_middle.png"
+    },
+    "marking": {
+      "textures": "textures/blocks/road_marking_straight.png"
     }
   }
 }

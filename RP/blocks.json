@@ -206,5 +206,149 @@
   },
   "road_zebra_crossing_middle": {
     "sound": "stone"
+  },
+  "base_road_ramp_5_625_part1": {
+    "sound": "stone"
+  },
+  "base_road_ramp_5_625_part2": {
+    "sound": "stone"
+  },
+  "base_road_ramp_5_625_part3": {
+    "sound": "stone"
+  },
+  "base_road_ramp_5_625_part4": {
+    "sound": "stone"
+  },
+  "base_road_ramp_5_625_part5": {
+    "sound": "stone"
+  },
+  "base_road_ramp_5_625_part6": {
+    "sound": "stone"
+  },
+  "base_road_ramp_5_625_part7": {
+    "sound": "stone"
+  },
+  "base_road_ramp_5_625_part8": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_5_625_part1": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_5_625_part2": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_5_625_part3": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_5_625_part4": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_5_625_part5": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_5_625_part6": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_5_625_part7": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_5_625_part8": {
+    "sound": "stone"
+  },
+  "base_road_ramp_45": {
+    "sound": "stone"
+  },
+  "base_road_ramp_22_5_part1": {
+    "sound": "stone"
+  },
+  "base_road_ramp_22_5_part2": {
+    "sound": "stone"
+  },
+  "base_road_ramp_11_25_part1": {
+    "sound": "stone"
+  },
+  "base_road_ramp_11_25_part2": {
+    "sound": "stone"
+  },
+  "base_road_ramp_11_25_part3": {
+    "sound": "stone"
+  },
+  "base_road_ramp_11_25_part4": {
+    "sound": "stone"
+  },
+  "base_road_ramp_15_part1": {
+    "sound": "stone"
+  },
+  "base_road_ramp_15_part2": {
+    "sound": "stone"
+  },
+  "base_road_ramp_15_part3": {
+    "sound": "stone"
+  },
+  "base_road_ramp_7_5_part1": {
+    "sound": "stone"
+  },
+  "base_road_ramp_7_5_part2": {
+    "sound": "stone"
+  },
+  "base_road_ramp_7_5_part3": {
+    "sound": "stone"
+  },
+  "base_road_ramp_7_5_part4": {
+    "sound": "stone"
+  },
+  "base_road_ramp_7_5_part5": {
+    "sound": "stone"
+  },
+  "base_road_ramp_7_5_part6": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_45": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_22_5_part1": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_22_5_part2": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_11_25_part1": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_11_25_part2": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_11_25_part3": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_11_25_part4": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_15_part1": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_15_part2": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_15_part3": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_7_5_part1": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_7_5_part2": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_7_5_part3": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_7_5_part4": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_7_5_part5": {
+    "sound": "stone"
+  },
+  "road_ramp_marking_7_5_part6": {
+    "sound": "stone"
   }
 }
