@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.50",
+  "format_version": "1.21.60",
   "minecraft:block": {
     "description": {
       "identifier": "jct:road_marking_stop",
@@ -23,7 +23,7 @@
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 30
       },
-      "minecraft:geometry": "geometry.base_road_16",
+      "minecraft:geometry": "geometry.base_road_h16",
       "minecraft:material_instances": {
         "*": {
           "texture": "base_road",

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.50",
+  "format_version": "1.21.60",
   "minecraft:block": {
     "description": {
       "identifier": "jct:road_ramp_marking_5_625_part8",
@@ -23,7 +23,7 @@
         ],
         "size": [
           16,
-          15,
+          16.0,
           16
         ]
       },
@@ -35,7 +35,7 @@
         ],
         "size": [
           16,
-          15,
+          16.0,
           16
         ]
       },

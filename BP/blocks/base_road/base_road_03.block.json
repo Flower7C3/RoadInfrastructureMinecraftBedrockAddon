@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.50",
+  "format_version": "1.21.60",
   "minecraft:block": {
     "description": {
       "identifier": "jct:base_road_3",
@@ -38,7 +38,7 @@
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 30
       },
-      "minecraft:geometry": "geometry.base_road_3",
+      "minecraft:geometry": "geometry.base_road_h3",
       "minecraft:material_instances": {
         "*": {
           "texture": "base_road",

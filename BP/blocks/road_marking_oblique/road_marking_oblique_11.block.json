@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.50",
+  "format_version": "1.21.60",
   "minecraft:block": {
     "description": {
       "identifier": "jct:road_marking_oblique_11",
@@ -45,7 +45,7 @@
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 30
       },
-      "minecraft:geometry": "geometry.base_road_11",
+      "minecraft:geometry": "geometry.base_road_h11",
       "minecraft:material_instances": {
         "*": {
           "texture": "base_road",
