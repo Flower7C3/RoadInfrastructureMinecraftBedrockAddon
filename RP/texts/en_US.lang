@@ -5,8 +5,8 @@ jct:pedestrian_slabs=Pedestrian slabs
 jct:concrete_roads=Concrete roads
 jct:straight_marking_roads=Straight roads markings
 jct:oblique_marking_roads=Oblique road marking
-jct:b_style_marking_roads=V-style road marking
-jct:road_marking_signs=Road marking signs
+jct:v_style_marking_roads=V-style road marking
+jct:horizontal_road_signs=Horizontal road signs
 
 tile.jct:base_road_1.name=Concrete road #1
 tile.jct:base_road_2.name=Concrete road #2

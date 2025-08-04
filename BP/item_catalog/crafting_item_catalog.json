@@ -121,7 +121,7 @@
           {
             "group_identifier": {
               "icon": "jct:arrow_road_marking",
-              "name": "jct:road_marking_signs"
+              "name": "jct:horizontal_road_signs"
             },
             "items": [
               "jct:arrow_road_marking",
@@ -206,7 +206,7 @@
           {
             "group_identifier": {
               "icon": "jct:road_marking_v_style_8",
-              "name": "jct:b_style_marking_roads"
+              "name": "jct:v_style_marking_roads"
             },
             "items": [
               "jct:road_marking_v_style_1",
