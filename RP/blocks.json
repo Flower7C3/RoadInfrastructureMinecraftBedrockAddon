@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.60",
+  "format_version": "1.21.40",
   "road_marking_straight_half_16": {
     "sound": "stone"
   },
@@ -255,9 +255,6 @@
   "road_ramp_marking_5_625_part8": {
     "sound": "stone"
   },
-  "base_road_ramp_45": {
-    "sound": "stone"
-  },
   "base_road_ramp_22_5_part1": {
     "sound": "stone"
   },
@@ -301,9 +298,6 @@
     "sound": "stone"
   },
   "base_road_ramp_7_5_part6": {
-    "sound": "stone"
-  },
-  "road_ramp_marking_45": {
     "sound": "stone"
   },
   "road_ramp_marking_22_5_part1": {
