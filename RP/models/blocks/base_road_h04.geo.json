@@ -1,18 +1,27 @@
 {
-  "format_version": "1.19.0",
+  "format_version": "1.21.60",
   "minecraft:geometry": [
     {
       "description": {
-        "identifier": "geometry.base_road_7",
+        "identifier": "geometry.base_road_h4",
         "texture_width": 16,
         "texture_height": 16,
-        "visible_bounds_width": 2,
-        "visible_bounds_height": 2.5,
+        "visible_bounds_width": 1,
+        "visible_bounds_height": 1,
         "visible_bounds_offset": [
           0,
           0.75,
           0
         ]
+      },
+      "item_display_transforms": {
+        "gui": {
+          "rotation": [
+            30,
+            45,
+            0
+          ]
+        }
       },
       "bones": [
         {
@@ -31,48 +40,48 @@
               ],
               "size": [
                 16,
-                7,
+                4,
                 16
               ],
               "uv": {
                 "north": {
                   "uv": [
                     0,
-                    9
+                    12
                   ],
                   "uv_size": [
                     16,
-                    7
+                    4
                   ]
                 },
                 "east": {
                   "uv": [
                     0,
-                    9
+                    12
                   ],
                   "uv_size": [
                     16,
-                    7
+                    4
                   ]
                 },
                 "south": {
                   "uv": [
                     0,
-                    9
+                    12
                   ],
                   "uv_size": [
                     16,
-                    7
+                    4
                   ]
                 },
                 "west": {
                   "uv": [
                     0,
-                    9
+                    12
                   ],
                   "uv_size": [
                     16,
-                    7
+                    4
                   ]
                 },
                 "up": {

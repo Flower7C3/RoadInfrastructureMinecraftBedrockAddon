@@ -1,18 +1,27 @@
 {
-  "format_version": "1.19.0",
+  "format_version": "1.21.60",
   "minecraft:geometry": [
     {
       "description": {
-        "identifier": "geometry.base_road_16",
+        "identifier": "geometry.base_road_h6",
         "texture_width": 16,
         "texture_height": 16,
-        "visible_bounds_width": 2,
-        "visible_bounds_height": 2.5,
+        "visible_bounds_width": 1,
+        "visible_bounds_height": 1,
         "visible_bounds_offset": [
           0,
           0.75,
           0
         ]
+      },
+      "item_display_transforms": {
+        "gui": {
+          "rotation": [
+            30,
+            45,
+            0
+          ]
+        }
       },
       "bones": [
         {
@@ -31,48 +40,48 @@
               ],
               "size": [
                 16,
-                16,
+                6,
                 16
               ],
               "uv": {
                 "north": {
                   "uv": [
                     0,
-                    0
+                    10
                   ],
                   "uv_size": [
                     16,
-                    16
+                    6
                   ]
                 },
                 "east": {
                   "uv": [
                     0,
-                    0
+                    10
                   ],
                   "uv_size": [
                     16,
-                    16
+                    6
                   ]
                 },
                 "south": {
                   "uv": [
                     0,
-                    0
+                    10
                   ],
                   "uv_size": [
                     16,
-                    16
+                    6
                   ]
                 },
                 "west": {
                   "uv": [
                     0,
-                    0
+                    10
                   ],
                   "uv_size": [
                     16,
-                    16
+                    6
                   ]
                 },
                 "up": {
