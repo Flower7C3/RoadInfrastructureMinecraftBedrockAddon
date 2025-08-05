@@ -185,4 +185,4 @@ jobs:
             - **${{ needs.build.outputs.rp_files }} plików RP**
             - **${{ needs.build.outputs.total_blocks }} bloków** infrastruktury drogowej
 
-            ### 🚀 [Ostatnie zmiany](${{ github.server_url }}/${{ github.repositoryUrl }}/compare/v${{ needs.build.outputs.version }}..${{ needs.build.outputs.last_tag }})
+            ### 🚀 [Ostatnie zmiany](${{ github.server_url }}/${{ github.repository }}/compare/v${{ needs.build.outputs.version }}..${{ needs.build.outputs.last_tag }})
