@@ -22,11 +22,10 @@
           },
           {
             "group_identifier": {
-              "icon": "jct:base_road_ramp_45",
+              "icon": "jct:base_road_ramp_22_5_part1",
               "name": "jct:road_ramps"
             },
             "items": [
-              "jct:base_road_ramp_45",
               "jct:base_road_ramp_22_5_part1",
               "jct:base_road_ramp_22_5_part2",
               "jct:base_road_ramp_15_part1",
@@ -54,11 +53,10 @@
           },
           {
             "group_identifier": {
-              "icon": "jct:road_ramp_marking_45",
+              "icon": "jct:road_ramp_marking_22_5_part1",
               "name": "jct:road_marking_ramps"
             },
             "items": [
-              "jct:road_ramp_marking_45",
               "jct:road_ramp_marking_22_5_part1",
               "jct:road_ramp_marking_22_5_part2",
               "jct:road_ramp_marking_15_part1",
@@ -82,6 +80,22 @@
               "jct:road_ramp_marking_5_625_part6",
               "jct:road_ramp_marking_5_625_part7",
               "jct:road_ramp_marking_5_625_part8"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:road_ramp_oblique_22_5_part1",
+              "name": "jct:road_ramps_oblique"
+            },
+            "items": [
+              "jct:road_ramp_oblique_22_5_part1",
+              "jct:road_ramp_oblique_22_5_part2",
+              "jct:road_ramp_oblique_22_5_part3",
+              "jct:road_ramp_oblique_11_25_part1",
+              "jct:road_ramp_oblique_11_25_part2",
+              "jct:road_ramp_oblique_11_25_part3",
+              "jct:road_ramp_oblique_11_25_part4",
+              "jct:road_ramp_oblique_11_25_part5"
             ]
           },
           {

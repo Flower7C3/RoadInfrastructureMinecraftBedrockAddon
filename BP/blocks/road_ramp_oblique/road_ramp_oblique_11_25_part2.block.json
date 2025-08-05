@@ -2,7 +2,7 @@
   "format_version": "1.21.60",
   "minecraft:block": {
     "description": {
-      "identifier": "jct:road_ramp_marking_45",
+      "identifier": "jct:road_ramp_oblique_11_25_part2",
       "menu_category": {
         "category": "construction"
       },
@@ -23,7 +23,7 @@
         ],
         "size": [
           16,
-          16.0,
+          4,
           16
         ]
       },
@@ -35,7 +35,7 @@
         ],
         "size": [
           16,
-          16.0,
+          8,
           16
         ]
       },
@@ -45,22 +45,12 @@
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 30
       },
-      "minecraft:geometry": "geometry.road_ramp_45",
+      "minecraft:geometry": "geometry.road_ramp_oblique_11_25_part2",
       "minecraft:material_instances": {
         "*": {
           "texture": "base_road",
           "render_method": "alpha_test_single_sided"
-        },
-        "up": {
-          "texture": "road_marking",
-          "render_method": "alpha_test_single_sided"
-        },
-        "marking": {
-          "texture": "road_marking",
-          "render_method": "alpha_test_single_sided"
-        },
-        "north": "marking",
-        "south": "marking"
+        }
       },
       "minecraft:map_color": "#353637"
     },
