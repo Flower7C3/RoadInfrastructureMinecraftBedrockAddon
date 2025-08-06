@@ -2,6 +2,7 @@
 
 # Core dependencies
 pathlib2>=2.3.7; python_version < "3.4"
+numpy
 
 # Development dependencies (optional)
 # Pillow>=9.0.0  # For image processing
