@@ -1,0 +1,55 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "jct:paving_slabs_colorstone_14",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "origin": [
+          -8,
+          0,
+          -8
+        ],
+        "size": [
+          16,
+          14,
+          16
+        ]
+      },
+      "minecraft:selection_box": {
+        "origin": [
+          -8,
+          0,
+          -8
+        ],
+        "size": [
+          16,
+          14,
+          16
+        ]
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 30
+      },
+      "minecraft:geometry": "geometry.base_road_h14",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "stonebrick",
+          "render_method": "alpha_test_single_sided"
+        },
+        "up": {
+          "texture": "paving_slabs_colorstone",
+          "render_method": "alpha_test_single_sided"
+        }
+      },
+      "minecraft:map_color": "#353637"
+    }
+  }
+}

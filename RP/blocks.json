@@ -3,48 +3,6 @@
   "road_marking_straight_half_16": {
     "sound": "stone"
   },
-  "paving_slabs_squares": {
-    "sound": "stone"
-  },
-  "paving_slabs_flower": {
-    "sound": "stone"
-  },
-  "paving_slabs_ceramic": {
-    "sound": "stone"
-  },
-  "paving_slabs_pattern": {
-    "sound": "stone"
-  },
-  "paving_slabs_decorative": {
-    "sound": "stone"
-  },
-  "paving_slabs_gray": {
-    "sound": "stone"
-  },
-  "paving_slabs_tileable": {
-    "sound": "stone"
-  },
-  "paving_slabs_colorstone": {
-    "sound": "stone"
-  },
-  "3d_turn": {
-    "sound": "stone"
-  },
-  "road_marking_stop": {
-    "sound": "stone"
-  },
-  "road_marking_stop_st": {
-    "sound": "stone"
-  },
-  "road_marking_stop_op": {
-    "sound": "stone"
-  },
-  "road_marking_subordinate": {
-    "sound": "stone"
-  },
-  "arrow_road_marking": {
-    "sound": "stone"
-  },
   "base_road_1": {
     "sound": "stone"
   },
@@ -93,52 +51,52 @@
   "base_road_9": {
     "sound": "stone"
   },
-  "road_marking_1": {
+  "road_marking_straight_1": {
     "sound": "stone"
   },
-  "road_marking_10": {
+  "road_marking_straight_10": {
     "sound": "stone"
   },
-  "road_marking_11": {
+  "road_marking_straight_11": {
     "sound": "stone"
   },
-  "road_marking_12": {
+  "road_marking_straight_12": {
     "sound": "stone"
   },
-  "road_marking_13": {
+  "road_marking_straight_13": {
     "sound": "stone"
   },
-  "road_marking_14": {
+  "road_marking_straight_14": {
     "sound": "stone"
   },
-  "road_marking_15": {
+  "road_marking_straight_15": {
     "sound": "stone"
   },
-  "road_marking_16": {
+  "road_marking_straight_16": {
     "sound": "stone"
   },
-  "road_marking_2": {
+  "road_marking_straight_2": {
     "sound": "stone"
   },
-  "road_marking_3": {
+  "road_marking_straight_3": {
     "sound": "stone"
   },
-  "road_marking_4": {
+  "road_marking_straight_4": {
     "sound": "stone"
   },
-  "road_marking_5": {
+  "road_marking_straight_5": {
     "sound": "stone"
   },
-  "road_marking_6": {
+  "road_marking_straight_6": {
     "sound": "stone"
   },
-  "road_marking_7": {
+  "road_marking_straight_7": {
     "sound": "stone"
   },
-  "road_marking_8": {
+  "road_marking_straight_8": {
     "sound": "stone"
   },
-  "road_marking_9": {
+  "road_marking_straight_9": {
     "sound": "stone"
   },
   "road_marking_oblique_1": {
@@ -189,16 +147,7 @@
   "road_marking_oblique_9": {
     "sound": "stone"
   },
-  "road_marking_turn": {
-    "sound": "stone"
-  },
-  "road_marking_arrow_left": {
-    "sound": "stone"
-  },
-  "road_marking_arrow_right": {
-    "sound": "stone"
-  },
-  "short_arrow_marking": {
+  "road_marking_turn_angle": {
     "sound": "stone"
   },
   "road_zebra_crossing_edge": {

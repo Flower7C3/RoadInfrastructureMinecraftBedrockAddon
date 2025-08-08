@@ -28,8 +28,8 @@
     "paving_slabs_colorstone": {
       "textures": "textures/blocks/paving_slabs_colorstone.png"
     },
-    "3d_turn": {
-      "textures": "textures/blocks/road_marking_turn_3d.png"
+    "road_marking_turn_curve": {
+      "textures": "textures/blocks/road_marking_turn_curve.png"
     },
     "road_marking_stop": {
       "textures": "textures/blocks/road_marking_stop.png"
@@ -43,7 +43,7 @@
     "road_marking_subordinate": {
       "textures": "textures/blocks/road_marking_subordinate.png"
     },
-    "arrow_road_marking": {
+    "road_marking_arrow_straight": {
       "textures": "textures/blocks/road_marking_arrow_straight.png"
     },
     "road_marking_arrow_left": {
@@ -55,7 +55,7 @@
     "base_road": {
       "textures": "textures/blocks/base_road.png"
     },
-    "road_marking": {
+    "road_marking_straight": {
       "textures": "textures/blocks/road_marking_straight.png"
     },
     "road_marking_oblique": {
@@ -64,7 +64,7 @@
     "road_marking_v_style": {
       "textures": "textures/blocks/road_marking_v_style.png"
     },
-    "road_marking_turn": {
+    "road_marking_turn_angle": {
       "textures": "textures/blocks/road_marking_turn_angle.png"
     },
     "road_marking_straight_half": {
@@ -78,9 +78,6 @@
     },
     "road_zebra_crossing_middle": {
       "textures": "textures/blocks/road_zebra_crossing_middle.png"
-    },
-    "marking": {
-      "textures": "textures/blocks/road_marking_straight.png"
     }
   }
 }
