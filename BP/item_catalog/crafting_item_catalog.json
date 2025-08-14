@@ -25,7 +25,7 @@
           {
             "group_identifier": {
               "icon": "jct:base_road_ramp_22_5_part1",
-              "name": "jct:road_ramps"
+              "name": "jct:road_ramps_straight"
             },
             "items": [
               "jct:base_road_ramp_5_625_part1",
@@ -55,33 +55,33 @@
           },
           {
             "group_identifier": {
-              "icon": "jct:road_ramp_marking_22_5_part1",
-              "name": "jct:road_marking_ramps"
+              "icon": "jct:road_ramp_marking_straight_22_5_part1",
+              "name": "jct:road_ramp_markings_straight"
             },
             "items": [
-              "jct:road_ramp_marking_5_625_part1",
-              "jct:road_ramp_marking_5_625_part2",
-              "jct:road_ramp_marking_5_625_part3",
-              "jct:road_ramp_marking_5_625_part4",
-              "jct:road_ramp_marking_5_625_part5",
-              "jct:road_ramp_marking_5_625_part6",
-              "jct:road_ramp_marking_5_625_part7",
-              "jct:road_ramp_marking_5_625_part8",
-              "jct:road_ramp_marking_7_5_part1",
-              "jct:road_ramp_marking_7_5_part2",
-              "jct:road_ramp_marking_7_5_part3",
-              "jct:road_ramp_marking_7_5_part4",
-              "jct:road_ramp_marking_7_5_part5",
-              "jct:road_ramp_marking_7_5_part6",
-              "jct:road_ramp_marking_11_25_part1",
-              "jct:road_ramp_marking_11_25_part2",
-              "jct:road_ramp_marking_11_25_part3",
-              "jct:road_ramp_marking_11_25_part4",
-              "jct:road_ramp_marking_15_part1",
-              "jct:road_ramp_marking_15_part2",
-              "jct:road_ramp_marking_15_part3",
-              "jct:road_ramp_marking_22_5_part1",
-              "jct:road_ramp_marking_22_5_part2"
+              "jct:road_ramp_marking_straight_5_625_part1",
+              "jct:road_ramp_marking_straight_5_625_part2",
+              "jct:road_ramp_marking_straight_5_625_part3",
+              "jct:road_ramp_marking_straight_5_625_part4",
+              "jct:road_ramp_marking_straight_5_625_part5",
+              "jct:road_ramp_marking_straight_5_625_part6",
+              "jct:road_ramp_marking_straight_5_625_part7",
+              "jct:road_ramp_marking_straight_5_625_part8",
+              "jct:road_ramp_marking_straight_7_5_part1",
+              "jct:road_ramp_marking_straight_7_5_part2",
+              "jct:road_ramp_marking_straight_7_5_part3",
+              "jct:road_ramp_marking_straight_7_5_part4",
+              "jct:road_ramp_marking_straight_7_5_part5",
+              "jct:road_ramp_marking_straight_7_5_part6",
+              "jct:road_ramp_marking_straight_11_25_part1",
+              "jct:road_ramp_marking_straight_11_25_part2",
+              "jct:road_ramp_marking_straight_11_25_part3",
+              "jct:road_ramp_marking_straight_11_25_part4",
+              "jct:road_ramp_marking_straight_15_part1",
+              "jct:road_ramp_marking_straight_15_part2",
+              "jct:road_ramp_marking_straight_15_part3",
+              "jct:road_ramp_marking_straight_22_5_part1",
+              "jct:road_ramp_marking_straight_22_5_part2"
             ]
           },
           {
@@ -98,6 +98,114 @@
               "jct:road_ramp_oblique_22_5_part1",
               "jct:road_ramp_oblique_22_5_part2",
               "jct:road_ramp_oblique_22_5_part3"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:road_marking_stop_16",
+              "name": "jct:horizontal_road_signs"
+            },
+            "items": [
+              "jct:road_marking_stop_16",
+              "jct:road_marking_stop_op_16",
+              "jct:road_marking_stop_st_16",
+              "jct:road_marking_subordinate_16",
+              "jct:road_marking_arrow_left_16",
+              "jct:road_marking_arrow_right_16",
+              "jct:road_marking_arrow_short_16",
+              "jct:road_marking_arrow_straight_16"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:base_road_8",
+              "name": "jct:concrete_roads"
+            },
+            "items": [
+              "jct:base_road_1",
+              "jct:base_road_2",
+              "jct:base_road_3",
+              "jct:base_road_4",
+              "jct:base_road_5",
+              "jct:base_road_6",
+              "jct:base_road_7",
+              "jct:base_road_8",
+              "jct:base_road_9",
+              "jct:base_road_10",
+              "jct:base_road_11",
+              "jct:base_road_12",
+              "jct:base_road_13",
+              "jct:base_road_14",
+              "jct:base_road_15"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:road_marking_straight_8",
+              "name": "jct:straight_marking_roads"
+            },
+            "items": [
+              "jct:road_marking_straight_1",
+              "jct:road_marking_straight_2",
+              "jct:road_marking_straight_3",
+              "jct:road_marking_straight_4",
+              "jct:road_marking_straight_5",
+              "jct:road_marking_straight_6",
+              "jct:road_marking_straight_7",
+              "jct:road_marking_straight_8",
+              "jct:road_marking_straight_9",
+              "jct:road_marking_straight_10",
+              "jct:road_marking_straight_11",
+              "jct:road_marking_straight_12",
+              "jct:road_marking_straight_13",
+              "jct:road_marking_straight_14",
+              "jct:road_marking_straight_15"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:road_marking_oblique_8",
+              "name": "jct:oblique_marking_roads"
+            },
+            "items": [
+              "jct:road_marking_oblique_1",
+              "jct:road_marking_oblique_2",
+              "jct:road_marking_oblique_3",
+              "jct:road_marking_oblique_4",
+              "jct:road_marking_oblique_5",
+              "jct:road_marking_oblique_6",
+              "jct:road_marking_oblique_7",
+              "jct:road_marking_oblique_8",
+              "jct:road_marking_oblique_9",
+              "jct:road_marking_oblique_10",
+              "jct:road_marking_oblique_11",
+              "jct:road_marking_oblique_12",
+              "jct:road_marking_oblique_13",
+              "jct:road_marking_oblique_14",
+              "jct:road_marking_oblique_15"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "jct:road_marking_v_style_8",
+              "name": "jct:v_style_marking_roads"
+            },
+            "items": [
+              "jct:road_marking_v_style_1",
+              "jct:road_marking_v_style_2",
+              "jct:road_marking_v_style_3",
+              "jct:road_marking_v_style_4",
+              "jct:road_marking_v_style_5",
+              "jct:road_marking_v_style_6",
+              "jct:road_marking_v_style_7",
+              "jct:road_marking_v_style_8",
+              "jct:road_marking_v_style_9",
+              "jct:road_marking_v_style_10",
+              "jct:road_marking_v_style_11",
+              "jct:road_marking_v_style_12",
+              "jct:road_marking_v_style_13",
+              "jct:road_marking_v_style_14",
+              "jct:road_marking_v_style_15"
             ]
           },
           {
@@ -234,114 +342,6 @@
               "jct:paving_slabs_tileable_14",
               "jct:paving_slabs_tileable_15",
               "jct:paving_slabs_tileable_16"
-            ]
-          },
-          {
-            "group_identifier": {
-              "icon": "jct:road_marking_stop_16",
-              "name": "jct:horizontal_road_signs"
-            },
-            "items": [
-              "jct:road_marking_stop_16",
-              "jct:road_marking_stop_op_16",
-              "jct:road_marking_stop_st_16",
-              "jct:road_marking_subordinate_16",
-              "jct:road_marking_arrow_left_16",
-              "jct:road_marking_arrow_right_16",
-              "jct:road_marking_arrow_short_16",
-              "jct:road_marking_arrow_straight_16"
-            ]
-          },
-          {
-            "group_identifier": {
-              "icon": "jct:base_road_8",
-              "name": "jct:concrete_roads"
-            },
-            "items": [
-              "jct:base_road_1",
-              "jct:base_road_2",
-              "jct:base_road_3",
-              "jct:base_road_4",
-              "jct:base_road_5",
-              "jct:base_road_6",
-              "jct:base_road_7",
-              "jct:base_road_8",
-              "jct:base_road_9",
-              "jct:base_road_10",
-              "jct:base_road_11",
-              "jct:base_road_12",
-              "jct:base_road_13",
-              "jct:base_road_14",
-              "jct:base_road_15"
-            ]
-          },
-          {
-            "group_identifier": {
-              "icon": "jct:road_marking_straight_8",
-              "name": "jct:straight_marking_roads"
-            },
-            "items": [
-              "jct:road_marking_straight_1",
-              "jct:road_marking_straight_2",
-              "jct:road_marking_straight_3",
-              "jct:road_marking_straight_4",
-              "jct:road_marking_straight_5",
-              "jct:road_marking_straight_6",
-              "jct:road_marking_straight_7",
-              "jct:road_marking_straight_8",
-              "jct:road_marking_straight_9",
-              "jct:road_marking_straight_10",
-              "jct:road_marking_straight_11",
-              "jct:road_marking_straight_12",
-              "jct:road_marking_straight_13",
-              "jct:road_marking_straight_14",
-              "jct:road_marking_straight_15"
-            ]
-          },
-          {
-            "group_identifier": {
-              "icon": "jct:road_marking_oblique_8",
-              "name": "jct:oblique_marking_roads"
-            },
-            "items": [
-              "jct:road_marking_oblique_1",
-              "jct:road_marking_oblique_2",
-              "jct:road_marking_oblique_3",
-              "jct:road_marking_oblique_4",
-              "jct:road_marking_oblique_5",
-              "jct:road_marking_oblique_6",
-              "jct:road_marking_oblique_7",
-              "jct:road_marking_oblique_8",
-              "jct:road_marking_oblique_9",
-              "jct:road_marking_oblique_10",
-              "jct:road_marking_oblique_11",
-              "jct:road_marking_oblique_12",
-              "jct:road_marking_oblique_13",
-              "jct:road_marking_oblique_14",
-              "jct:road_marking_oblique_15"
-            ]
-          },
-          {
-            "group_identifier": {
-              "icon": "jct:road_marking_v_style_8",
-              "name": "jct:v_style_marking_roads"
-            },
-            "items": [
-              "jct:road_marking_v_style_1",
-              "jct:road_marking_v_style_2",
-              "jct:road_marking_v_style_3",
-              "jct:road_marking_v_style_4",
-              "jct:road_marking_v_style_5",
-              "jct:road_marking_v_style_6",
-              "jct:road_marking_v_style_7",
-              "jct:road_marking_v_style_8",
-              "jct:road_marking_v_style_9",
-              "jct:road_marking_v_style_10",
-              "jct:road_marking_v_style_11",
-              "jct:road_marking_v_style_12",
-              "jct:road_marking_v_style_13",
-              "jct:road_marking_v_style_14",
-              "jct:road_marking_v_style_15"
             ]
           }
         ]

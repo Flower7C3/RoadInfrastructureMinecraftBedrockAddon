@@ -7,6 +7,8 @@ from console_utils import ConsoleStyle
 
 
 class MinecraftAddon:
+    MARKING_STRAIGHT = 'straight'
+    MARKING_OBLIQUE = 'oblique'
     FORMAT_VERSION = "1.21.60"
     NAMESPACE = 'jct'
 
@@ -22,7 +24,7 @@ class MinecraftAddon:
 
     @staticmethod
     def create_block_file(output_dir: str, block_identifier: str, geometry_identifier: str, collision_box_size_y: float,
-                          selection_box_size_y: float, marking: bool = False):
+                          selection_box_size_y: float, marking: str = ''):
         """Generuje plik bloku na podstawie typu części"""
         filename = f"BP/blocks/{output_dir}{block_identifier}.block.json"
         data = {
@@ -56,12 +58,20 @@ class MinecraftAddon:
                 ]
             }
         }
-        if marking:
+        if marking == MinecraftAddon.MARKING_STRAIGHT:
             data['minecraft:block']['components']['minecraft:material_instances'] = {
                 "*": {"texture": "base_road", "render_method": "alpha_test_single_sided", },
-                "up": {"texture": "road_marking", "render_method": "alpha_test_single_sided"},
-                "marking": {"texture": "road_marking", "render_method": "alpha_test_single_sided"},
+                "up": {"texture": "road_marking_straight", "render_method": "alpha_test_single_sided"},
+                "marking": {"texture": "road_marking_straight", "render_method": "alpha_test_single_sided"},
                 "north": "marking",
+                "south": "marking"
+            }
+        if marking == MinecraftAddon.MARKING_OBLIQUE:
+            data['minecraft:block']['components']['minecraft:material_instances'] = {
+                "*": {"texture": "base_road", "render_method": "alpha_test_single_sided", },
+                "up": {"texture": "road_marking_oblique", "render_method": "alpha_test_single_sided"},
+                "marking": {"texture": "road_marking_straight", "render_method": "alpha_test_single_sided"},
+                "east": "marking",
                 "south": "marking"
             }
         json_str = json.dumps(data, indent=2, ensure_ascii=False)
@@ -158,52 +168,39 @@ class RoadRampStraight:
             print(ConsoleStyle.process(f"Generating [{identifier}_part{part}] content..."))
             road_ramp_geometry_identifier = f'road_ramp_{identifier}{f"_part{part}" if parts > 1 else ""}'
             road_ramp_base_block_identifier = f'base_road_ramp_{identifier}{f"_part{part}" if parts > 1 else ""}'
-            road_ramp_block_marking_identifier = f'road_ramp_marking_{identifier}{f"_part{part}" if parts > 1 else ""}'
+            road_ramp_marking_straight_block_identifier = f'road_ramp_marking_straight_{identifier}{f"_part{part}" if parts > 1 else ""}'
 
             ################################################################################################################
             # Calculate cubes for this part
             cubes = []
             if part > 1:
-                cubes.append({"origin": [-8, 0, -8], "size": [16, base_size_y, 16], "uv": {
-                    "north": {"uv": [0, 15], "uv_size": [16, 1]},
-                    "east": {"uv": [0, 15], "uv_size": [16, 1]},
-                    "south": {"uv": [0, 15], "uv_size": [16, 1]},
-                    "west": {"uv": [0, 15], "uv_size": [16, 1]},
-                    "up": {"uv": [0, 0], "uv_size": [16, 16]},
-                    "down": {"uv": [0, 0], "uv_size": [16, 16]}
-                }})
+                cubes.append(RampAlgorithm._cube(-8, 0, -8, 16, base_size_y, 16))
 
             size_z = round(16 - origin_y * parts, 3)
             while size_z < 1:
                 size_z = 16 + size_z
 
             while size_z > 0:
-                cubes.append({"origin": [-8, origin_y, -8], "size": [16, size_y, size_z], "uv": {
-                    "north": {"uv": [0, 15], "uv_size": [16, 1]},
-                    "east": {"uv": [0, 15], "uv_size": [16, 1]},
-                    "south": {"uv": [0, 15], "uv_size": [16, 1]},
-                    "west": {"uv": [0, 15], "uv_size": [16, 1]},
-                    "up": {"uv": [0, 0], "uv_size": [16, 16]},
-                    "down": {"uv": [0, 0], "uv_size": [16, 16]}
-                }})
+                cubes.append(RampAlgorithm._cube(-8, origin_y, -8, 16, size_y, size_z))
                 origin_y = round(origin_y + size_y, 3)
                 size_z = round(size_z - (parts * size_y), 3)
 
             base_size_y = round(origin_y, 3)
 
-            MinecraftAddon.create_geometry_file('blocks/', road_ramp_geometry_identifier, cubes)
+            MinecraftAddon.create_geometry_file('blocks/road_ramp/', road_ramp_geometry_identifier, cubes)
             ################################################################################################################
             collision_box_size_y = round(origin_y, 3) if origin_y <= 16.0 else 16.0
             selection_box_size_y = round(origin_y, 3) if origin_y <= 16.0 else 16.0
-            MinecraftAddon.create_block_file('base_road_ramp/',
+            MinecraftAddon.create_block_file('ramps/base_road_ramp/',
                                              road_ramp_base_block_identifier,
                                              road_ramp_geometry_identifier,
                                              collision_box_size_y, selection_box_size_y)
             # Road ramp marking with variants
-            MinecraftAddon.create_block_file('road_ramp_marking/',
-                                             road_ramp_block_marking_identifier,
+            MinecraftAddon.create_block_file('ramps/road_ramp_marking_straight/',
+                                             road_ramp_marking_straight_block_identifier,
                                              road_ramp_geometry_identifier,
-                                             collision_box_size_y, selection_box_size_y, True)
+                                             collision_box_size_y, selection_box_size_y,
+                                             MinecraftAddon.MARKING_STRAIGHT)
             ################################################################################################################
 
 
@@ -250,7 +247,22 @@ class RampAlgorithm:
     def generate(cls, parts: Dict):
         for part_type, cubes in parts.items():
             print(ConsoleStyle.process(f"Generating [{part_type}] content..."))
-            MinecraftAddon.create_geometry_file('blocks/', f"road_ramp_oblique_{part_type}", cubes)
+
+            # Generuj geometrię dla bloków podstawowych
+            MinecraftAddon.create_geometry_file('blocks/road_ramp_oblique/', f"road_ramp_oblique_{part_type}", cubes)
+
+            # # Generuj geometrię dla bloków z oznaczeniami (z teksturą oznaczenia na górze)
+            # marking_cubes = []
+            # for cube in cubes:
+            #     # Skopiuj kostkę, ale zmień teksturę górnej ścianki na oznaczenie
+            #     marking_cube = cube.copy()
+            #     # if "uv" in marking_cube and "up" in marking_cube["uv"]:
+            #     #     marking_cube["uv"]["up"]["material_instance"] = "road_marking_oblique"
+            #     marking_cubes.append(marking_cube)
+            #
+            # # Utwórz plik geometrii dla bloków z oznaczeniami w katalogu road_ramp_oblique
+            # MinecraftAddon.create_geometry_file('blocks/road_ramp_marking_oblique/', f"road_ramp_marking_oblique_{part_type}",
+            #                                     marking_cubes)
 
             # Określ wysokość na podstawie typu części
             collision_box_size_y = 16.0
@@ -270,25 +282,43 @@ class RampAlgorithm:
                 collision_box_size_y = 16
             selection_box_size_y = collision_box_size_y + 4 if collision_box_size_y < 16 else 16
 
-            MinecraftAddon.create_block_file('road_ramp_oblique/',
+            MinecraftAddon.create_block_file('ramps/road_ramp_oblique/',
                                              f"road_ramp_oblique_{part_type}",
                                              f"road_ramp_oblique_{part_type}",
                                              collision_box_size_y, selection_box_size_y)
+            # MinecraftAddon.create_block_file('ramps/road_ramp_marking_oblique/',
+            #                                  f"road_ramp_marking_oblique_{part_type}",
+            #                                  f"road_ramp_marking_oblique_{part_type}",
+            #                                  collision_box_size_y, selection_box_size_y, MinecraftAddon.MARKING_OBLIQUE)
 
     # ===== UNIWERSALNE METODY POMOCNICZE =====
+
+    @classmethod
+    def _cube(cls, origin_x: float, origin_y: float, origin_z: float, size_x: float, size_y: float, size_z: float,
+              up_texture: str = "base_road"):
+        return {
+            "origin": [origin_x, origin_y, origin_z],
+            "size": [size_x, size_y, size_z],
+            # "uv": {
+            #     "north": {"uv": [0, 15], "uv_size": [16, 1], "material_instance": "base_road"},  # X,Y
+            #     "south": {"uv": [0, 15], "uv_size": [16, 1], "material_instance": "base_road"},  # X,Y
+            #     "east": {"uv": [0, 15], "uv_size": [16, 1], "material_instance": "base_road"},  # Z,Y
+            #     "west": {"uv": [0, 15], "uv_size": [16, 1], "material_instance": "base_road"},  # Z,Y
+            #     "up": {"uv": [8 + origin_x, 8 + origin_z], "uv_size": [size_x, size_z],
+            #            "material_instance": up_texture},  # X,Z - proporcjonalne do rozmiaru
+            #     "down": {"uv": [0, 0], "uv_size": [size_x, size_z], "material_instance": "base_road"},
+            #     # X,Z - proporcjonalne do rozmiaru
+            # }
+        }
 
     @classmethod
     def _generate_full_layer(cls, level_from, level_to) -> List[Dict]:
         """Generuje pełne warstwy 16x16 od level_from do level_to"""
         cubes = []
-        for origin_y in np.arange(level_from, level_to + 1, cls.STEP_SIZE):
-            for origin_x in np.arange(-8, 8, cls.STEP_SIZE):
-                for origin_z in np.arange(-8, 8, cls.STEP_SIZE):
-                    cube = {
-                        "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                        "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                    }
-                    cubes.append(cube)
+        # for origin_y in np.arange(level_from, level_to + 1, cls.STEP_SIZE):
+        #     for origin_x in np.arange(-8, 8, cls.STEP_SIZE):
+        #         for origin_z in np.arange(-8, 8, cls.STEP_SIZE):
+        cubes.append(cls._cube(-8, level_from, -8, 16, level_to + 1, 16))
         return cubes
 
     @classmethod
@@ -297,21 +327,10 @@ class RampAlgorithm:
         cubes = []
         main_size_z = 16 - (origin_y * 2)  # Malejąca głębokość Z
         if main_size_z > 0:
-            for origin_x in np.arange(-8, 8, cls.STEP_SIZE):
-                for origin_z in np.arange(-8, -8 + main_size_z, cls.STEP_SIZE):
-                    cube = {
-                        "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                        "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                    }
-                    cubes.append(cube)
-        return cubes
-
-    @classmethod
-    def _generate_main_rectangle(cls, level_from, level_to) -> List[Dict]:
-        """Generuje główne prostokąty od level_from do level_to"""
-        cubes = []
-        for origin_y in np.arange(level_from, level_to + 1, cls.STEP_SIZE):
-            cubes.extend(cls._generate_main_rectangle_for_layer(origin_y))
+            # for origin_x in np.arange(-8, 8, cls.STEP_SIZE):
+            for origin_z in np.arange(-8, -8 + main_size_z, cls.STEP_SIZE):
+                cubes.append(cls._cube(float(-8), float(origin_y), float(origin_z), float(16), cls.STEP_SIZE,
+                                       cls.STEP_SIZE))
         return cubes
 
     @classmethod
@@ -322,20 +341,9 @@ class RampAlgorithm:
         start_z = 8 - num_cubes
         for origin_z in np.arange(start_z, start_z + num_cubes, cls.STEP_SIZE):
             size_x = 16 - (origin_z - start_z)
-            for origin_x in np.arange(-8, -8 + size_x, cls.STEP_SIZE):
-                cube = {
-                    "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                    "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                }
-                cubes.append(cube)
-        return cubes
-
-    @classmethod
-    def _generate_additional_cubes(cls, level_from, level_to) -> List[Dict]:
-        """Generuje dodatkowe kostki od level_from do level_to"""
-        cubes = []
-        for origin_y in np.arange(level_from, level_to + 1, cls.STEP_SIZE):
-            cubes.extend(cls._generate_additional_cubes_for_layer(origin_y))
+            # for origin_x in np.arange(-8, -8 + size_x, cls.STEP_SIZE):
+            cubes.append(
+                cls._cube(float(-8), float(origin_y), float(origin_z), float(size_x), cls.STEP_SIZE, cls.STEP_SIZE))
         return cubes
 
     @classmethod
@@ -371,12 +379,10 @@ class RoadRampOblique45000(RampAlgorithm):
                 size_x = 16 - float(origin_y) - (origin_z + 8)
                 if size_x > 0:
                     for x_offset in np.arange(0, float(size_x * 2), cls.STEP_SIZE):
-                        origin_x = -8 + (float(x_offset) * float(cls.STEP_SIZE))
-                        cube = {
-                            "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                            "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                        }
-                        cubes.append(cube)
+                        origin_x = -8 + (float(x_offset) * cls.STEP_SIZE)
+                        cubes.append(
+                            cls._cube(float(origin_x), float(origin_y), float(origin_z), cls.STEP_SIZE, cls.STEP_SIZE,
+                                      cls.STEP_SIZE))
         return cubes
 
     @classmethod
@@ -393,12 +399,10 @@ class RoadRampOblique45000(RampAlgorithm):
                     size_x = 16 - (float(origin_z) - float(threshold) + 1)
 
                 for x_offset in np.arange(0, float(size_x * 2), cls.STEP_SIZE):
-                    origin_x = -8 + (float(x_offset) * float(cls.STEP_SIZE))
-                    cube = {
-                        "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                        "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                    }
-                    cubes.append(cube)
+                    origin_x = -8 + (float(x_offset) * cls.STEP_SIZE)
+                    cubes.append(
+                        cls._cube(float(origin_x), float(origin_y), float(origin_z), cls.STEP_SIZE, cls.STEP_SIZE,
+                                  cls.STEP_SIZE))
         return cubes
 
     @classmethod
@@ -433,67 +437,25 @@ class RoadRampOblique22500(RampAlgorithm):
 
         for origin_y in np.arange(level_from, level_to + 1, cls.STEP_SIZE):
             for origin_z in np.arange(-8, 8 - float(origin_y), cls.STEP_SIZE):
-                if 16 - (2 * float(origin_y)) - (origin_z + 8) > 0:
-                    for origin_x in np.arange(-8, -8 + (16 - (2 * float(origin_y)) - (origin_z + 8)), cls.STEP_SIZE):
-                        cube = {
-                            "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                            "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                        }
-                        cubes.append(cube)
+                size_x = 16 - (2 * float(origin_y)) - (origin_z + 8)
+                if size_x > 0:
+                    # for origin_x in np.arange(-8, -8 + size_x, cls.STEP_SIZE):
+                    origin_x = -8
+                    cubes.append(
+                        cls._cube(origin_x, float(origin_y), float(origin_z), size_x, cls.STEP_SIZE, cls.STEP_SIZE))
 
         return cubes
 
     @classmethod
-    def _generate_full_layer(cls, level_from, level_to) -> List[Dict]:
-        """Generuje pełne warstwy 16x16 od level_from do level_to"""
-        cubes = []
-        for origin_y in np.arange(level_from, level_to + 1, cls.STEP_SIZE):
-            for origin_x in np.arange(-8, 8, cls.STEP_SIZE):
-                for origin_z in np.arange(-8, 8, cls.STEP_SIZE):
-                    cube = {
-                        "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                        "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                    }
-                    cubes.append(cube)
-        return cubes
-
-    @classmethod
-    def _generate_main_rectangle_for_layer(cls, origin_y) -> List[Dict]:
-        """Generuje główne prostokąty dla konkretnej warstwy"""
-        cubes = []
-        main_size_z = 16 - (origin_y * 2)  # Malejąca głębokość Z
-        if main_size_z > 0:
-            for origin_x in np.arange(-8, 8, cls.STEP_SIZE):
-                for origin_z in np.arange(-8, -8 + main_size_z, cls.STEP_SIZE):
-                    cube = {
-                        "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                        "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                    }
-                    cubes.append(cube)
-        return cubes
-
-    @classmethod
-    def _generate_main_rectangle(cls, level_from, level_to) -> List[Dict]:
-        """Generuje główne prostokąty od level_from do level_to"""
-        cubes = []
-        for origin_y in np.arange(level_from, level_to + 1, cls.STEP_SIZE):
-            cubes.extend(cls._generate_main_rectangle_for_layer(origin_y))
-        return cubes
-
-    @classmethod
-    def _generate_additional_cubes_for_layer(cls, origin_y) -> List[Dict]:
+    def _generate_additional_cubes_for_layer22(cls, origin_y) -> List[Dict]:
         """Generuje dodatkowe kostki dla konkretnej warstwy"""
         cubes = []
         num_cubes = 2 * origin_y
         start_z = 8 - 2 * origin_y
         for origin_z in np.arange(start_z, start_z + num_cubes, cls.STEP_SIZE):
             size_x = 16 - (origin_z - start_z)
-            for origin_x in np.arange(-8, -8 + size_x, cls.STEP_SIZE):
-                cube = {
-                    "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                    "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                }
-                cubes.append(cube)
+            # for origin_x in np.arange(-8, -8 + size_x, cls.STEP_SIZE):
+            cubes.append(cls._cube(-8, float(origin_y), float(origin_z), size_x, cls.STEP_SIZE, cls.STEP_SIZE))
         return cubes
 
     @classmethod
@@ -501,7 +463,7 @@ class RoadRampOblique22500(RampAlgorithm):
         """Generuje dodatkowe kostki od level_from do level_to"""
         cubes = []
         for origin_y in np.arange(level_from, level_to + 1, cls.STEP_SIZE):
-            cubes.extend(cls._generate_additional_cubes_for_layer(origin_y))
+            cubes.extend(cls._generate_additional_cubes_for_layer22(origin_y))
         return cubes
 
     @classmethod
@@ -514,12 +476,9 @@ class RoadRampOblique22500(RampAlgorithm):
             max_size = 16 - 2 * offset_y
             for origin_z in np.arange(-8, -8 + num_cubes, cls.STEP_SIZE):
                 size_x = max_size - (origin_z + 8)
-                for origin_x in np.arange(-8, -8 + size_x, cls.STEP_SIZE):
-                    cube = {
-                        "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                        "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                    }
-                    cubes.append(cube)
+                # for origin_x in np.arange(-8, -8 + size_x, cls.STEP_SIZE):
+                cubes.append(
+                    cls._cube(float(-8), float(origin_y), float(origin_z), float(size_x), cls.STEP_SIZE, cls.STEP_SIZE))
 
         return cubes
 
@@ -534,20 +493,14 @@ class RoadRampOblique22500(RampAlgorithm):
                 if origin_z >= -8 + num_normal_cubes:
                     # To pozycja dla małej kostki
                     size_x = 15 - (origin_z - (-8 + num_normal_cubes))
-                    for origin_x in np.arange(-8, -8 + size_x, cls.STEP_SIZE):
-                        cube = {
-                            "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                            "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                        }
-                        cubes.append(cube)
+                    # for origin_x in np.arange(-8, -8 + size_x, cls.STEP_SIZE):
+                    cubes.append(cls._cube(float(-8), float(origin_y), float(origin_z), float(size_x), cls.STEP_SIZE,
+                                           cls.STEP_SIZE))
                 else:
                     # To pozycja dla normalnej kostki
-                    for origin_x in np.arange(-8, 8, cls.STEP_SIZE):
-                        cube = {
-                            "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                            "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                        }
-                        cubes.append(cube)
+                    # for origin_x in np.arange(-8, 8, cls.STEP_SIZE):
+                    cubes.append(
+                        cls._cube(float(-8), float(origin_y), float(origin_z), float(16), cls.STEP_SIZE, cls.STEP_SIZE))
         return cubes
 
     # ===== METODY GŁÓWNE =====
@@ -598,24 +551,17 @@ class RoadRampOblique11250(RampAlgorithm):
         for origin_y in np.arange(level_from, level_to + 1, cls.STEP_SIZE):
             main_size_z = 16 - 4 * (origin_y - level_from)
             if main_size_z > 0:
-                for origin_x in np.arange(-8, 8, cls.STEP_SIZE):
-                    for origin_z in np.arange(-8, -8 + float(main_size_z), cls.STEP_SIZE):
-                        cube = {
-                            "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                            "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                        }
-                        cubes.append(cube)
+                # for origin_x in np.arange(-8, 8, cls.STEP_SIZE):
+                # for origin_z in np.arange(-8, -8 + float(main_size_z), cls.STEP_SIZE):
+                cubes.append(cls._cube(-8, float(origin_y), -8, 16, cls.STEP_SIZE, main_size_z))
 
             # Dodatkowe kostki
             start_z = -8 + main_size_z
             end_z = 7
             for origin_z in np.arange(start_z, end_z + 1, cls.STEP_SIZE):
                 size_x = max(1, 16 - (origin_z - start_z))
-                for origin_x in np.arange(-8, -8 + size_x, cls.STEP_SIZE):
-                    cubes.append({
-                        "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                        "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                    })
+                # for origin_x in np.arange(-8, -8 + size_x, cls.STEP_SIZE):
+                cubes.append(cls._cube(-8, float(origin_y), float(origin_z), size_x, cls.STEP_SIZE, cls.STEP_SIZE))
 
         return cubes
 
@@ -627,10 +573,9 @@ class RoadRampOblique11250(RampAlgorithm):
             for origin_z in np.arange(-8, -8 + num_cubes, cls.STEP_SIZE):
                 size_x = num_cubes - (origin_z + 8)
                 for origin_x in np.arange(-8, -8 + size_x, cls.STEP_SIZE):
-                    cubes.append({
-                        "origin": [float(origin_x), float(origin_y), float(origin_z)],
-                        "size": [float(cls.STEP_SIZE), float(cls.STEP_SIZE), float(cls.STEP_SIZE)]
-                    })
+                    cubes.append(
+                        cls._cube(float(origin_x), float(origin_y), float(origin_z), cls.STEP_SIZE, cls.STEP_SIZE,
+                                  cls.STEP_SIZE))
 
         return cubes
 

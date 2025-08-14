@@ -2,7 +2,7 @@
   "format_version": "1.21.60",
   "minecraft:block": {
     "description": {
-      "identifier": "jct:road_ramp_marking_7_5_part3",
+      "identifier": "jct:road_ramp_marking_straight_5_625_part3",
       "menu_category": {
         "category": "construction"
       },
@@ -23,7 +23,7 @@
         ],
         "size": [
           16,
-          8.016,
+          6.0,
           16
         ]
       },
@@ -35,7 +35,7 @@
         ],
         "size": [
           16,
-          8.016,
+          6.0,
           16
         ]
       },
@@ -45,7 +45,7 @@
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 30
       },
-      "minecraft:geometry": "geometry.road_ramp_7_5_part3",
+      "minecraft:geometry": "geometry.road_ramp_5_625_part3",
       "minecraft:material_instances": {
         "*": {
           "texture": "base_road",

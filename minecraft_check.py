@@ -211,8 +211,14 @@ class MinecraftUtils:
     @staticmethod
     def _verify_icon(item_data):
         """Wspólna weryfikacja material_instances w bloku"""
-        return item_data.get('minecraft:item', {}).get('components', {}).get(
+        icon_data = item_data.get('minecraft:item', {}).get('components', {}).get(
             'minecraft:icon', {})
+        if isinstance(icon_data, dict) and 'texture' in icon_data:
+            return icon_data['texture']
+        elif isinstance(icon_data, str):
+            return icon_data
+        else:
+            return ""
 
     @staticmethod
     def _verify_block_structure(block_id: str, block_data):

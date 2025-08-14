@@ -2,7 +2,7 @@
   "format_version": "1.21.60",
   "minecraft:block": {
     "description": {
-      "identifier": "jct:road_marking_straight_half",
+      "identifier": "jct:road_marking_straight_half_16",
       "menu_category": {
         "category": "construction"
       },
